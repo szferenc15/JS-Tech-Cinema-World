@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12 pt-4 pb-5" align="center">
+      <div class="ticket-payment-info-div">
+        <h2 class="title pb-3">Ülésrend</h2>
+        <table class="color-white">
+          <tr>
+            <td></td>
+            <td class="pb-5 center" colSpan="{{ roomDimension.seatNumber }}">
+              <div class="screen" [ngClass]="{'small-canvas': roomDimension.seatNumber <= 20,
+                                              'medium-canvas': roomDimension.seatNumber > 20 &&
+                                                               roomDimension.seatNumber < 40,
+                                              'large-canvas': roomDimension.seatNumber >= 40}">
+                                              Vetítővászon
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr *ngFor="let row of rows">
+            <td class="pr-3">
+              {{ row }}
+            </td>
+            <td class="pl-1 pr-1 pt-1 pb-1" *ngFor="let column of columns">
+              <button class="btn chair-btn"
+                      #charBtn
+                      mat-raised-button
+                      (click)="selectChair(row, column, charBtn)"
+                      [ngClass]="{'large-chair-btn': roomDimension.seatNumber <= 20,
+                                  'medium-chair-btn': roomDimension.seatNumber > 20 &&
+                                                      roomDimension.seatNumber < 50,
+                                  'small-chair-btn': roomDimension.seatNumber >= 50,
+                                  'free-chair': isFree(row, column),
+                                  'occupied-char': !isFree(row, column)}">
+                      {{ (row - 1)*(roomDimension.seatNumber) + column }}
+              </button>
+            </td>
+            <td class="pl-3">
+                {{ row }}
+            </td>
+          </tr>
+        </table>
+
+        <div class="pt-5">
+            <button class="btn btn-dark"
+                    mat-raised-button
+                    matStepperNext
+                    (click)="saveBookingInDatabase()">
+                    Következő
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

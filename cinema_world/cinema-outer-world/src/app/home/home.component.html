@@ -1,0 +1,194 @@
+<div *ngIf="loaded">
+  <div class="container">
+    <div id="information" class="row">
+
+      <div class="col-lg-3 col-md-3 col-xs-3 col-sm-3">
+        <table class="film-panel">
+          <tr>
+            <td colspan="2">
+              <button class="navigation-btn" mat-raised-button (click)="goUp()" [disabled]="activeFilmIndex == 0">
+                <i class="material-icons">arrow_upward</i>
+              </button>
+            </td>
+          </tr>
+          <tr class="film-tr"
+              *ngFor="let film of activeFilms; let i = index;"
+              (click)="changeActiveElement(i)"
+              [ngClass]="{'highlighted': activeFilm == i}">
+            <td class="film-picture">
+              <img src="{{ film.picture }}"
+                  alt="{{ film.title }}"
+                  height="80"
+                  width="60" />
+            </td>
+            <td class="film-name">
+                {{ film.title }}
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button class="navigation-btn" mat-raised-button (click)="goDown()" [disabled]="activeFilmIndex == films.length - 3">
+                <i class="material-icons">arrow_downward</i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-lg-9 col-xs-9 col-md-9 col-sm-9" align="center">
+        <table>
+          <tr>
+            <td class="padding-right-10">
+              <button mat-fab (click)="previousTrailer()" [disabled]="activeTrailer == 0">
+                <i class="material-icons">arrow_back</i>
+              </button>
+            </td>
+            <td class="padding-right-10">
+                <iframe class="box-shadow"
+                        width="700"
+                        height="355"
+                        [src]="url"
+                        frameborder="0"
+                        allowfullscreen>
+                </iframe>
+            </td>
+            <td>
+              <button mat-fab (click)="nextTrailer()" [disabled]="activeTrailer == this.films[this.activeElement].trailers.length - 1">
+                <i class="material-icons">arrow_forward</i>
+              </button>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row padding-left-20 information">
+
+      <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10" align="center">
+        <table>
+          <tr>
+            <td class="big-picture">
+              <img src="{{ films[activeElement].picture }}"
+              alt="{{ films[activeElement].title }}"
+              height="190"
+              width="140" />
+            </td>
+          </tr>
+          <tr>
+            <td class="padding-top-10 text-center">
+                <span class="fa fa-star checked big"></span>
+                <span *ngFor="let star of rate" class="fa fa-star checked big padding-left-10"></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
+        <table class="full-width">
+          <th class="title" colspan="2">
+            <h2>{{ films[activeElement].title }}</h2>
+          </th>
+          <tr class="white">
+            <td>Eredeti nyelv:</td>
+            <td class="float-right">
+                <span>
+                    {{ films[activeElement].language }}
+                </span>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>Műfaj:</td>
+            <td class="float-right">
+              <span *ngFor="let category of films[activeElement].categories; let i = index;">
+                  {{ category.category.category }}
+                  <span *ngIf="i < films[activeElement].categories.length - 1">
+                      |
+                  </span>
+              </span>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>Játékidő (perc):</td>
+            <td class="float-right">
+                <span>
+                    {{ films[activeElement].playTime }}
+                </span>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>Premier:</td>
+            <td class="float-right">
+                <span>
+                    {{ films[activeElement].premiere }}
+                </span>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>Korhatár:</td>
+            <td class="float-right">
+                <span>
+                    {{ films[activeElement].ageLimit }}
+                </span>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>Rendező:</td>
+            <td class="float-right">
+                <span>
+                    {{ films[activeElement].directorFirstName }}
+                </span>
+                <span>
+                    {{ films[activeElement].directorLastName }}
+                </span>
+            </td>
+          </tr>
+          <tr class="white">
+            <td>Ország és év:</td>
+            <td class="float-right">
+                <span>
+                    {{ films[activeElement].country }}
+                </span>
+                <span>
+                    ({{ films[activeElement].year }})
+                </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
+        <table>
+          <th>
+            <h3 class="title">Leírás</h3>
+          </th>
+          <tr class="white">
+            <td class="text-justify">{{ films[activeElement].description }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-lg-3 col-xs-3 col-md-3 col-sm-3 padding-top-10">
+        <table class="reservation-table">
+          <th>
+            <h3 class="title">Jegyfoglalás</h3>
+          </th>
+          <tr>
+            <td class="reservation-font pt-2" *ngIf="!hasLoggedInUser">A jegyfoglaláshoz kérlek jelentkezz be!</td>
+            <td class="pt-2" >
+              <button class="btn btn-dark"
+                      mat-raised-button
+                      *ngIf="hasLoggedInUser"
+                      (click)="setZeroStageInfoOfBooking(films[activeElement])">
+                      Jegyfoglalás
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

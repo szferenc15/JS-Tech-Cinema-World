@@ -1,0 +1,63 @@
+<div class="container pt-3">
+  <div class="row padding-left-20 information">
+    <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" align="center">
+      <div class="space"></div>
+      <mat-slide-toggle class="mat-warn" #toggle [checked]="true">Mutasd a jegyárakat</mat-slide-toggle>
+      <div class="space"></div>
+      <mat-table *ngIf="toggle.checked" [dataSource]="ticketInfoDataSource" matSort>
+        <ng-container matColumnDef="type">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Jegy típus</mat-header-cell>
+          <mat-cell *matCellDef="let row"  style="flex: 0 0 10%;"> {{row.type}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="twoDimensionalPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">2D ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.twoDimensionalPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="imaxPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">IMAX ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.imaxPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="imaxGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">IMAX + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.imaxGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="threeDimensionalPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">3D ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.threeDimensionalPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="threeDimensionalGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">3D + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.threeDimensionalGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fourDimensionalPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">4D ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.fourDimensionalPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="fourDimensionalGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">4D + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.fourDimensionalGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="bedRoomPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Ágyszoba ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.bedRoomPrice}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="bedRoomGlassPrice">
+          <mat-header-cell *cdkHeaderCellDef mat-sort-header style="flex: 0 0 10%;">Ágyszoba + szemüveg ár</mat-header-cell>
+          <mat-cell *matCellDef="let row" style="flex: 0 0 10%;"> {{row.bedRoomGlassPrice}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="ticketInfoColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ticketInfoColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+</div>

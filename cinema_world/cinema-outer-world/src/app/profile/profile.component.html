@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row information padding-left-20">
+    <div [ngClass]="{'col-lg-7': isAdminUser, 'col-xs-7': isAdminUser, 'col-md-7': isAdminUser,' col-sm-7': isAdminUser,
+                      'col-lg-12': !isAdminUser, 'col-xs-12': !isAdminUser, 'col-md-12': !isAdminUser,' col-sm-12': !isAdminUser}" class="pt-4 pb-5" align="center">
+      <div class="cinema-search-field">
+        <h2 class="title pb-3">Profil</h2>
+        <table class="color-white profile-table">
+          <tr>
+            <td class="pr-3" rowspan="5">
+              <img src="../../assets/profile.png"
+                  alt="Profilkép"
+                  width="300px"
+                  height="300px"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="pr-3">
+              Felhasználónév:
+            </td>
+            <td>
+              {{ activeUser.username }}
+            </td>
+          </tr>
+          <tr>
+            <td class="pr-3">
+              Email-cím:
+            </td>
+            <td>
+              {{ activeUser.email }}
+            </td>
+          </tr>
+          <tr>
+            <td class="pr-3">
+              Telefonszám:
+            </td>
+            <td>
+              {{ activeUser.phoneNumber }}
+            </td>
+          </tr>
+          <tr>
+            <td class="pr-3">
+              Szint:
+            </td>
+            <td>
+              {{ activeUser.adminRight ? "Adminisztrátor" : "Felhasználó"}}
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+    <div *ngIf="isAdminUser" class="col-lg-5 col-xs-5 col-md-5 col-sm-5 pt-4 pb-5" align="center">
+        <table>
+          <tr>
+            <td>
+                <app-admin></app-admin>
+            </td>
+          </tr>
+        </table>
+    </div>
+
+  </div>
+</div>

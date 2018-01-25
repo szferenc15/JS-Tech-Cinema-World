@@ -1,0 +1,139 @@
+div#information td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.navigation-btn.mat-raised-button, button.mat-fab.mat-accent {
+  border: 1px solid #777777;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #dd000f;
+}
+
+button.navigation-btn.mat-raised-button:disabled, button.mat-fab.mat-accent:disabled {
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #999999;
+  border: 1px solid black;
+}
+
+img {
+  border: 2px solid black;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.padding-left-10 {
+  padding-left: 40px;
+}
+
+.padding-left-20 {
+  padding-left: 20px;
+}
+
+.padding-right-10 {
+  padding-right: 10px;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.navigation-btn {
+  width: 100%;
+}
+
+.film-name {
+  font-variant: small-caps;
+  font-size: 19px;
+  width: 80%;
+}
+
+.film-picture {
+  width: 20%;
+  padding-left: 10px;
+}
+
+.film-tr {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: #222222;
+  text-align: center;
+}
+
+div#information .film-tr:hover:not(.highlighted) .film-name,
+div#information .film-tr:hover:not(.highlighted) .film-picture{
+  color: #dd000f;
+  background-color: #333333;
+  font-size: 25px;
+}
+
+.big {
+  font-size: 23px;
+}
+
+.checked {
+  color: #dd000f;
+}
+
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.title {
+  color: #dd000f;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.film-panel {
+  width: 350px;
+}
+
+.box-shadow {
+  -moz-box-shadow: 0 0 25px 5px black;
+  -webkit-box-shadow: 0 0 25px 5px black;
+  box-shadow: 0 0 25px 5px black;
+}
+
+.highlighted {
+  cursor: default;
+  background-color: #dd000f;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
+}
+
+.big-picture {
+  text-align: center;
+  margin: auto;
+}
+
+.reservation-font {
+  font-size: 18px;
+  font-variant: small-caps;
+  text-align: center;
+  color: #dd000f;
+  font-weight: bold;
+}
+
+.white {
+  color: white;
+}
+
+.reservation-table {
+  width: 100%;
+}

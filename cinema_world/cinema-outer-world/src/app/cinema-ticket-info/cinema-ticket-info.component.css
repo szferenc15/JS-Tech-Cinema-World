@@ -1,0 +1,77 @@
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #dd000f;
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(221,0,15,0.5);
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #dd000f;
+}
+
+::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba(221,0,15,0.5);
+}
+
+mat-table {
+  width: 90%;
+  border: 2px solid #555555;
+}
+
+::ng-deep .mat-sort-header-container {
+  justify-content: center;
+}
+
+::ng-deep .mat-sort-header-button {
+  text-transform: uppercase;
+}
+
+mat-header-cell {
+  color: #dd000f;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+mat-header-row {
+  background-color: #111111;
+}
+
+mat-cell {
+  color: white;
+}
+
+mat-row {
+  background-color: #222222;
+}
+
+.mat-header-row, .mat-row {
+  border-bottom-color: #444444;
+}
+
+mat-slide-toggle {
+  color: #777777;
+  text-shadow: 2px 2px 5px black;
+}
+
+.ticket-info-container {
+  width: 20%;
+  background-color: #222222;
+  border: 1px solid #555555;
+}
+
+::ng-deep .mat-slide-toggle-content {
+  font-size: 18px;
+}
+
+.space {
+  padding-bottom: 20px;
+}
+
+.information {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.container {
+  max-width: 100%;
+}

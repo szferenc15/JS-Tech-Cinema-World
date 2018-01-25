@@ -1,23 +1,12 @@
-[MVC]: https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm
-[H2]: http://www.h2database.com/html/tutorial.html
-[JPA]: https://www.tutorialspoint.com/jpa/index.htm
-[Thymeleaf]: http://www.thymeleaf.org/
-[Lombok]: https://projectlombok.org/
-[JAVA Spring Boot]: https://projects.spring.io/spring-boot/
 [Git]: https://git-scm.com/
 [Microsoft Visual Studio Code]: https://code.visualstudio.com/
 [Angular 2/4]: https://angular.io/
-[JAVA 7/8]: https://en.wikipedia.org/wiki/Java_(programming_language)
-[Eötvös Loránd Tudományegyetem Informatikai Kar]: http://inf.elte.hu
 
 [ER]: ./resources/img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
-[MVC_architecture]: ./resources/img/MVC_architecture.png "MVC architektúra"
 
-# Alkalmazások fejlesztése - Cinema World
+# JavaScript Technológiák - Cinema World
 
-A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely [MVC] (Model-View-Controller) architektúrában épül fel:
-
-![alt text][MVC_architecture]
+A projekt egy mozi frontend és backend rendszerének megvalósításáról szól, mely full-stack JavaScriptben van megírva.
 
 ## Célközönség:
 Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségű finomságokról.
@@ -49,15 +38,9 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + Felhasználóbarát design
 
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
-+ **[H2]** - Adatbáziskezelő,
-+ **[JPA]** - (Java Persistence API) Relációs adatkezelő
-+ **[Thymeleaf]** - Szerveroldali template motor XHTML/HTML5/XML-hez
-+ **[Lombok]** - Szerveroldali automatikus erőforrás menedzser
-+ **[JAVA Spring Boot]** - JAVA szerveroldali keretrendszer
 + **[Git]** - Verziókezelő rendszer
 + **[Microsoft Visual Studio Code]** - Forráskód szerkesztő
 + **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
-+ **[JAVA 7/8]** - Programozási nyelv (szerveroldal)
 
 ```
 TODO: 
@@ -561,12 +544,6 @@ TODO:
 ## Egyed-kapcsolat diagram:
 ![alt text][ER]
 
-## Használat (Backend):
-1. CMD: **mvnw spring-boot:run** parancs futtatása a ***./cinema_world/cinema_inner_world*** útvonal alatt
-2. Az alkalmazás gyökere a **localhost:8080** socketen érhető el böngészőből
-3. Adatbázis elérése és létrehozása: **localhost:8080/h2** címen a következő konfigurálással <br />
--> ***JDBC URL***: **jdbc:h2:mem:testdb** (minden más maradhat alapméretezetten)
-
 ## Használat (Frontend):
 1. CMD: **ng serve** parancs futtatása a ***./cinema_world/cinema_outer_world*** útvonal alatt
 2. Az alkalmazás gyökere a **localhost:4200** socketen érhető el böngészőből
@@ -621,7 +598,4 @@ TODO:
 </table>
 
 ## Szerzők:
-+ **Kapás Dorina Anita**
 + **Szendrei Ferenc**
-
-**[Eötvös Loránd Tudományegyetem Informatikai Kar]**

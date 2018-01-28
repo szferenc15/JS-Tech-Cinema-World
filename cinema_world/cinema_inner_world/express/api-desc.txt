@@ -1,0 +1,50 @@
+/api
+POST /register
+req: {
+  username: string,
+  password: string,
+}
+res: {
+  username: string,
+  passwordHash: string,
+}
+POST /login
+req: {
+  username: string,
+  password: string,
+}
+res: redirect
+POST /friends/:username
+res: statusCode
+GET /friends
+res: {
+  friends: [
+    {
+	  username: string,
+	}
+  ]
+}
+POST /posts
+req: {
+  message: string,
+}
+res: {
+  postId: number,
+  postTime: timestamp (number),
+}
+GET /posts/:username
+res: {
+  posts: [
+    {
+	  postId: string,
+	  message: string,
+	  postTime: timestamp (number),
+	}
+  ]
+}
+GET /posts/:username/:postId
+res: {
+  postId: number,
+  message: string,
+  postTime: timestamp (number),
+}

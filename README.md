@@ -1,6 +1,8 @@
 [Git]: https://git-scm.com/
 [Microsoft Visual Studio Code]: https://code.visualstudio.com/
 [Angular 2/4]: https://angular.io/
+[Node JS]: https://nodejs.org/
+[Express]: https://expressjs.com/
 
 [ER]: ./resources/img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
 
@@ -12,9 +14,9 @@ A projekt egy mozi frontend és backend rendszerének megvalósításáról szó
 Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, hanem az élményekről, a kényelemről és a prémium minőségű finomságokról.
 
 ## Szerepkörök:
-+ **Vendég**: Filmek adatlapját, illetve előzeteseit tudja megtekinteni.
-+ **Felhasználó**: Tud foglalni, jegyet venni, filmet értékelni.
-+ **Adminisztrátor**: Új filmeket tud felvenni az adatbázisba, illetve tud törölni is onnan (ha például egy filmet már nem vetítenek).
++ **Vendég**
++ **Felhasználó**
++ **Adminisztrátor**
 
 ## Funkcionális követelmények:
 + **Vendégként** szeretnék a filmek között szabadon böngészni.
@@ -40,6 +42,8 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
 + **[Git]** - Verziókezelő rendszer
 + **[Microsoft Visual Studio Code]** - Forráskód szerkesztő
++ **[Node JS]** - Szerver oldali JavaScript
++ **[Express]** - Node JS webalkalmazási keretrendszer
 + **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
 
 ```
@@ -599,3 +603,7 @@ TODO:
 
 ## Szerzők:
 + **Szendrei Ferenc**
+
+## Felhasznált források:
++ **Kapás Dorina Anita**: szferenc15/cinema_world (Alkalmazások fejlesztése tantárgy közös beadandója, kliens oldal alapja)
++ **Móger Tibor**: Hapcy/js-tech-anyagok/express (szerver oldal kiinduló alapja)

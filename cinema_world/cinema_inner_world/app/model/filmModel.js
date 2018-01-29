@@ -1,9 +1,9 @@
 
 var Datastore = require('nedb'),
 
-  filmsDb = new Datastore({
-    filename: './app/db/films.db',
+  filmDb = new Datastore({
+    filename: './app/db/film.db',
     autoload: true
   });
 
-module.exports = filmsDb;
+module.exports = filmDb;

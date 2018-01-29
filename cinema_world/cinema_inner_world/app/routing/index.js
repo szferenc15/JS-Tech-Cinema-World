@@ -13,6 +13,9 @@ const roomRouter = require('./roomRouter');
 const screeningRouter = require('./screeningRouter');
 const ticketRouter = require('./ticketRouter');
 const screeningTicketRouter = require('./screeningTicketRouter');
+const bookingRouter = require('./bookingRouter');
+const userBookingRouter = require('./userBookingRouter');
+const bookingTicketRouter = require('./bookingTicketRouter');
 
 appRoutes.use('/user', userRouter);
 appRoutes.use('/cinema', cinemaRouter);
@@ -25,5 +28,8 @@ appRoutes.use('/room', roomRouter);
 appRoutes.use('/screening', screeningRouter);
 appRoutes.use('/ticket', ticketRouter);
 appRoutes.use('/screeningTicket', screeningTicketRouter);
+appRoutes.use('/booking', bookingRouter);
+appRoutes.use('/userBooking', userBookingRouter);
+appRoutes.use('/bookingTicket', bookingTicketRouter);
 
 module.exports = appRoutes;

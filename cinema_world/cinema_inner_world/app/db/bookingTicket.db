@@ -1,0 +1,3 @@
+{"_id":"1","username":"almafa","payment":"Booking","ticket_type":"IMAX 3D Diak","booking_id":"1","row":6,"chair":21}
+{"_id":"2","username":"barackfa","payment":"Booking","ticket_type":"IMAX 3D Diak","booking_id":"1","row":6,"chair":22}
+{"_id":"3","username":"barackfa","payment":"Paypal","ticket_type":"IMAX 3D Normal","booking_id":"2","row":8,"chair":15}

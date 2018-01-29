@@ -11,6 +11,8 @@ const categoryRouter = require('./categoryRouter');
 const filmCategoryRouter = require('./filmCategoryRouter');
 const roomRouter = require('./roomRouter');
 const screeningRouter = require('./screeningRouter');
+const ticketRouter = require('./ticketRouter');
+const screeningTicketRouter = require('./screeningTicketRouter');
 
 appRoutes.use('/user', userRouter);
 appRoutes.use('/cinema', cinemaRouter);
@@ -21,5 +23,7 @@ appRoutes.use('/category', categoryRouter);
 appRoutes.use('/filmCategory', filmCategoryRouter);
 appRoutes.use('/room', roomRouter);
 appRoutes.use('/screening', screeningRouter);
+appRoutes.use('/ticket', ticketRouter);
+appRoutes.use('/screeningTicket', screeningTicketRouter);
 
 module.exports = appRoutes;

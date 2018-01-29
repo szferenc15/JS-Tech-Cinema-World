@@ -1,0 +1,75 @@
+{"_id":"1","type":"2D Normal","price":1760}
+{"_id":"10","type":"IMAX 4D Normal + SZ","price":2860}
+{"_id":"11","type":"Agyas 2D Normal","price":2350}
+{"_id":"12","type":"Agyas 3D Normal","price":2670}
+{"_id":"13","type":"Agyas 3D Normal + SZ","price":3100}
+{"_id":"14","type":"Agyas 4D Normal","price":2950}
+{"_id":"15","type":"Agyas 4D Normal + SZ","price":3520}
+{"_id":"16","type":"2D Diak","price":1420}
+{"_id":"17","type":"3D Diak","price":1640}
+{"_id":"18","type":"3D Diak + SZ","price":2010}
+{"_id":"19","type":"4D Diak","price":2100}
+{"_id":"2","type":"3D Normal","price":1960}
+{"_id":"20","type":"4D Diak + SZ","price":2240}
+{"_id":"21","type":"IMAX 2D Diak","price":1820}
+{"_id":"22","type":"IMAX 3D Diak","price":2020}
+{"_id":"23","type":"IMAX 3D Diak + SZ","price":2350}
+{"_id":"24","type":"IMAX 4D Diak","price":2200}
+{"_id":"25","type":"IMAX 4D Diak + SZ","price":2510}
+{"_id":"26","type":"Agyas 2D Diak","price":2110}
+{"_id":"27","type":"Agyas 3D Diak","price":2380}
+{"_id":"28","type":"Agyas 3D Diak + SZ","price":2710}
+{"_id":"29","type":"Agyas 4D Diak","price":2830}
+{"_id":"3","type":"3D Normal + SZ","price":2320}
+{"_id":"30","type":"Agyas 4D Diak + SZ","price":3310}
+{"_id":"31","type":"2D Junior","price":1420}
+{"_id":"32","type":"3D Junior","price":1640}
+{"_id":"33","type":"3D Junior + SZ","price":2010}
+{"_id":"34","type":"4D Junior","price":2100}
+{"_id":"35","type":"4D Junior + SZ","price":2240}
+{"_id":"36","type":"IMAX 2D Junior","price":1820}
+{"_id":"37","type":"IMAX 3D Junior","price":2020}
+{"_id":"38","type":"IMAX 3D Junior + SZ","price":2350}
+{"_id":"39","type":"IMAX 4D Junior","price":2200}
+{"_id":"4","type":"4D Normal","price":2260}
+{"_id":"40","type":"IMAX 4D Junior + SZ","price":2510}
+{"_id":"41","type":"Agyas 2D Junior","price":2110}
+{"_id":"42","type":"Agyas 3D Junior","price":2380}
+{"_id":"43","type":"Agyas 3D Junior + SZ","price":2710}
+{"_id":"44","type":"Agyas 4D Junior","price":2830}
+{"_id":"45","type":"Agyas 4D Junior + SZ","price":3310}
+{"_id":"46","type":"2D Szenior","price":1420}
+{"_id":"47","type":"3D Szenior","price":1640}
+{"_id":"48","type":"3D Szenior + SZ","price":2010}
+{"_id":"49","type":"4D Szenior","price":2100}
+{"_id":"5","type":"4D Normal + SZ","price":2520}
+{"_id":"50","type":"4D Szenior + SZ","price":2240}
+{"_id":"51","type":"IMAX 2D Szenior","price":1820}
+{"_id":"52","type":"IMAX 3D Szenior","price":2020}
+{"_id":"53","type":"IMAX 3D Szenior + SZ","price":2350}
+{"_id":"54","type":"IMAX 4D Szenior","price":2200}
+{"_id":"55","type":"IMAX 4D Szenior + SZ","price":2510}
+{"_id":"56","type":"Agyas 2D Szenior","price":2110}
+{"_id":"57","type":"Agyas 3D Szenior","price":2380}
+{"_id":"58","type":"Agyas 3D Szenior + SZ","price":2710}
+{"_id":"59","type":"Agyas 4D Szenior","price":2830}
+{"_id":"6","type":"IMAX 2D Normal","price":2100}
+{"_id":"60","type":"Agyas 4D Szenior + SZ","price":3310}
+{"_id":"61","type":"2D Fogy.elo","price":1420}
+{"_id":"62","type":"3D Fogy.elo","price":1640}
+{"_id":"63","type":"3D Fogy.elo + SZ","price":2010}
+{"_id":"64","type":"4D Fogy.elo","price":2100}
+{"_id":"65","type":"4D Fogy.elo + SZ","price":2240}
+{"_id":"66","type":"IMAX 2D Fogy.elo","price":1820}
+{"_id":"67","type":"IMAX 3D Fogy.elo","price":2020}
+{"_id":"68","type":"IMAX 3D Fogy.elo + SZ","price":2350}
+{"_id":"69","type":"IMAX 4D Fogy.elo","price":2200}
+{"_id":"7","type":"IMAX 3D Normal","price":2260}
+{"_id":"70","type":"IMAX 4D Fogy.elo + SZ","price":2510}
+{"_id":"71","type":"Agyas 2D Fogy.elo","price":2110}
+{"_id":"72","type":"Agyas 3D Fogy.elo","price":2380}
+{"_id":"73","type":"Agyas 3D Fogy.elo + SZ","price":2710}
+{"_id":"74","type":"Agyas 4D Fogy.elo","price":2830}
+{"_id":"75","type":"Agyas 4D Fogy.elo + SZ","price":3310}
+{"_id":"8","type":"IMAX 3D Normal + SZ","price":2520}
+{"_id":"9","type":"IMAX 4D Normal","price":2450}

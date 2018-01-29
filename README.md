@@ -3,6 +3,7 @@
 [Angular 2/4]: https://angular.io/
 [Node JS]: https://nodejs.org/
 [Express]: https://expressjs.com/
+[NeDB]: https://github.com/louischatriot/nedb
 
 [ER]: ./resources/img/Entity_Relationship_diagram.png "Egyed-kapcsolat diagram"
 
@@ -44,6 +45,7 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + **[Microsoft Visual Studio Code]** - Forráskód szerkesztő
 + **[Node JS]** - Szerver oldali JavaScript (szerveroldal)
 + **[Express]** - Node JS webalkalmazási keretrendszer (szerveroldal)
++ **[NeDB]** - JavaScript adatbáziskezelő (szerveroldal)
 + **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
 
 ```

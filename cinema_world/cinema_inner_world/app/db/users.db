@@ -1,3 +1,3 @@
-{"username":"Valera","password":"pass1234","email":"valra@gmail.com","age":"26","_id":"081SD6VBQb4Vx0Rg"}
-{"age":"1","email":"1","password":"1","username":"s","_id":"Qx2WNw8y9vPgUfOU"}
-{"username":"Jerry","password":"oook1234@","email":"a@a.a","age":"001","_id":"TdTCkDpLes30WsN8"}
+{"username":"barackfa","password":"Dr123$,.-","email":"barackfa@barackfa.fa","phone_number":"06302003000","admin_right":false,"_id":"081SD6VBQb4Vx0Rg"}
+{"username":"almafa","password":"Dr123$,.-","email":"almafa@almafa.fa","phone_number":"06302003005","admin_right":false,"_id":"Qx2WNw8y9vPgUfOU"}
+{"username":"admin","password":"Dr123$,.-","email":"admin@admin.com","phone_number":"06302003010","admin_right":true,"_id":"TdTCkDpLes30WsN8"}

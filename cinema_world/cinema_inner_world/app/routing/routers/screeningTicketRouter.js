@@ -1,11 +1,11 @@
 var express = require('express'),
-	cinemaModel = require('../model/cinemaModel'),
+	screeningTicketModel = require('../../model/screeningTicketModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		cinemaModel.find({}, function(err, users) {
+		screeningTicketModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		cinemaModel.insert(postData, function(err, newUser) {
+		screeningTicketModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		cinemaModel.findOne(
+		screeningTicketModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				cinemaModel.update(
+				screeningTicketModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		cinemaModel.findOne(
+		screeningTicketModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		cinemaModel.remove(
+		screeningTicketModel.remove(
 			{
 				_id: req.params.id
 			},

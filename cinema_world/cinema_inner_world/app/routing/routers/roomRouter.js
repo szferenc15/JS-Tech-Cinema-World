@@ -1,5 +1,5 @@
 var express = require('express'),
-	roomModel = require('../model/roomModel'),
+	roomModel = require('../../model/roomModel'),
 	router = express.Router();
 
 router

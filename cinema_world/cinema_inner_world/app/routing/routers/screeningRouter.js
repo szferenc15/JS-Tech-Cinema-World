@@ -1,11 +1,11 @@
 var express = require('express'),
-	categoryModel = require('../model/categoryModel'),
+	screeningModel = require('../../model/screeningModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		categoryModel.find({}, function(err, users) {
+		screeningModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		categoryModel.insert(postData, function(err, newUser) {
+		screeningModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		categoryModel.findOne(
+		screeningModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				categoryModel.update(
+				screeningModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		categoryModel.findOne(
+		screeningModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		categoryModel.remove(
+		screeningModel.remove(
 			{
 				_id: req.params.id
 			},

@@ -1,11 +1,11 @@
 var express = require('express'),
-	bookingTicketModel = require('../model/bookingTicketModel'),
+	cinemaFilmModel = require('../../../model/join_tables/cinemaFilmModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		bookingTicketModel.find({}, function(err, users) {
+		cinemaFilmModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		bookingTicketModel.insert(postData, function(err, newUser) {
+		cinemaFilmModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		bookingTicketModel.findOne(
+		cinemaFilmModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				bookingTicketModel.update(
+				cinemaFilmModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		bookingTicketModel.findOne(
+		cinemaFilmModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		bookingTicketModel.remove(
+		cinemaFilmModel.remove(
 			{
 				_id: req.params.id
 			},

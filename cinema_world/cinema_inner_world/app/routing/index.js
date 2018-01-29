@@ -2,20 +2,20 @@
 const Router = require('express').Router;
 const appRoutes = new Router();
 
-const userRouter = require('./userRouter');
-const cinemaRouter = require('./cinemaRouter');
-const filmRouter = require('./filmRouter');
-const cinemaFilmRouter = require('./cinemaFilmRouter');
-const trailerRouter = require('./trailerRouter');
-const categoryRouter = require('./categoryRouter');
-const filmCategoryRouter = require('./filmCategoryRouter');
-const roomRouter = require('./roomRouter');
-const screeningRouter = require('./screeningRouter');
-const ticketRouter = require('./ticketRouter');
-const screeningTicketRouter = require('./screeningTicketRouter');
-const bookingRouter = require('./bookingRouter');
-const userBookingRouter = require('./userBookingRouter');
-const bookingTicketRouter = require('./bookingTicketRouter');
+const userRouter = require('./routers/userRouter');
+const cinemaRouter = require('./routers/cinemaRouter');
+const filmRouter = require('./routers/filmRouter');
+const cinemaFilmRouter = require('./routers/join_tables/cinemaFilmRouter');
+const trailerRouter = require('./routers/trailerRouter');
+const categoryRouter = require('./routers/categoryRouter');
+const filmCategoryRouter = require('./routers/filmCategoryRouter');
+const roomRouter = require('./routers/roomRouter');
+const screeningRouter = require('./routers/screeningRouter');
+const ticketRouter = require('./routers/ticketRouter');
+const screeningTicketRouter = require('./routers/screeningTicketRouter');
+const bookingRouter = require('./routers/bookingRouter');
+const userBookingRouter = require('./routers/join_tables/userBookingRouter');
+const bookingTicketRouter = require('./routers/bookingTicketRouter');
 
 appRoutes.use('/user', userRouter);
 appRoutes.use('/cinema', cinemaRouter);

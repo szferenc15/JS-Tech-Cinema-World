@@ -1,5 +1,5 @@
 var express = require('express'),
-	bookingModel = require('../model/bookingModel'),
+	bookingModel = require('../../model/bookingModel'),
 	router = express.Router();
 
 router

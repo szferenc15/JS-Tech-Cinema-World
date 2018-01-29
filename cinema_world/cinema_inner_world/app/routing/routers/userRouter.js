@@ -1,11 +1,11 @@
 var express = require('express'),
-	filmCategoryModel = require('../model/filmCategoryModel'),
+	usersModel = require('../../model/userModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		filmCategoryModel.find({}, function(err, users) {
+		usersModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		filmCategoryModel.insert(postData, function(err, newUser) {
+		usersModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		filmCategoryModel.findOne(
+		usersModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				filmCategoryModel.update(
+				usersModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		filmCategoryModel.findOne(
+		usersModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		filmCategoryModel.remove(
+		usersModel.remove(
 			{
 				_id: req.params.id
 			},

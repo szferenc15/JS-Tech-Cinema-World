@@ -1,11 +1,11 @@
 var express = require('express'),
-	userBookingModel = require('../model/userBookingModel'),
+	categoryModel = require('../../model/categoryModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		userBookingModel.find({}, function(err, users) {
+		categoryModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		userBookingModel.insert(postData, function(err, newUser) {
+		categoryModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		userBookingModel.findOne(
+		categoryModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				userBookingModel.update(
+				categoryModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		userBookingModel.findOne(
+		categoryModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		userBookingModel.remove(
+		categoryModel.remove(
 			{
 				_id: req.params.id
 			},

@@ -1,11 +1,11 @@
 var express = require('express'),
-	filmModel = require('../model/filmModel'),
+	trailerModel = require('../../model/trailerModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		filmModel.find({}, function(err, users) {
+		trailerModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		filmModel.insert(postData, function(err, newUser) {
+		trailerModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		filmModel.findOne(
+		trailerModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				filmModel.update(
+				trailerModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		filmModel.findOne(
+		trailerModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		filmModel.remove(
+		trailerModel.remove(
 			{
 				_id: req.params.id
 			},

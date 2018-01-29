@@ -1,11 +1,11 @@
 var express = require('express'),
-	screeningModel = require('../model/screeningModel'),
+	filmModel = require('../../model/filmModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		screeningModel.find({}, function(err, users) {
+		filmModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		screeningModel.insert(postData, function(err, newUser) {
+		filmModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		screeningModel.findOne(
+		filmModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				screeningModel.update(
+				filmModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		screeningModel.findOne(
+		filmModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		screeningModel.remove(
+		filmModel.remove(
 			{
 				_id: req.params.id
 			},

@@ -1,11 +1,11 @@
 var express = require('express'),
-	ticketModel = require('../model/ticketModel'),
+	bookingTicketModel = require('../../model/bookingTicketModel'),
 	router = express.Router();
 
 router
 	.route('/all')
 	.get(function(req, res) {
-		ticketModel.find({}, function(err, users) {
+		bookingTicketModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
 				return;
@@ -36,7 +36,7 @@ router
 			return;
 		}
 
-		ticketModel.insert(postData, function(err, newUser) {
+		bookingTicketModel.insert(postData, function(err, newUser) {
 			if (err) {
 				res.send(err);
 
@@ -50,7 +50,7 @@ router
 router
 	.route('/users/:id')
 	.put(function(req, res) {
-		ticketModel.findOne(
+		bookingTicketModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -78,7 +78,7 @@ router
 					}
 				}
 
-				ticketModel.update(
+				bookingTicketModel.update(
 					{
 						_id: user._id
 					},
@@ -101,7 +101,7 @@ router
 		);
 	})
 	.get(function(req, res) {
-		ticketModel.findOne(
+		bookingTicketModel.findOne(
 			{
 				_id: req.params.id
 			},
@@ -126,7 +126,7 @@ router
 		);
 	})
 	.delete(function(req, res) {
-		ticketModel.remove(
+		bookingTicketModel.remove(
 			{
 				_id: req.params.id
 			},

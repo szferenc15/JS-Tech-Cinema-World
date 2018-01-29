@@ -555,5 +555,6 @@ TODO:
 + **Szendrei Ferenc**
 
 ## Felhasznált források:
-+ **Kapás Dorina Anita**: szferenc15/cinema_world (Alkalmazások fejlesztése tantárgy közös beadandója, kliensoldal alapja)
-+ **Móger Tibor**: Hapcy/js-tech-anyagok/express (szerveroldal kiinduló alapja)
++ **Kapás Dorina Anita**: https://github.com/szferenc15/cinema_world (Alkalmazások fejlesztése tantárgy közös beadandója, kliensoldal alapja)
++ **Móger Tibor**: https://github.com/Hapcy/js-tech-anyagok (szerveroldal kiinduló alapja)
++ **Valera Rozuvan**: https://github.com/valera-rozuvan/simple-express-js-with-db (szerveroldal kiinduló alapja)

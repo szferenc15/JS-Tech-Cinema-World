@@ -42,8 +42,8 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
 + **[Git]** - Verziókezelő rendszer
 + **[Microsoft Visual Studio Code]** - Forráskód szerkesztő
-+ **[Node JS]** - Szerver oldali JavaScript
-+ **[Express]** - Node JS webalkalmazási keretrendszer
++ **[Node JS]** - Szerver oldali JavaScript (szerveroldal)
++ **[Express]** - Node JS webalkalmazási keretrendszer (szerveroldal)
 + **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
 
 ```
@@ -544,9 +544,16 @@ TODO:
     </tr>
 </table>
 
+## Egyed-kapcsolat diagram:
+![alt text][ER]
+
+## Használat (Frontend):
+1. CMD: **ng serve** parancs futtatása a ***./cinema_world/cinema_outer_world*** útvonal alatt
+2. Az alkalmazás gyökere a **localhost:4200** socketen érhető el böngészőből
+
 ## Szerzők:
 + **Szendrei Ferenc**
 
 ## Felhasznált források:
-+ **Kapás Dorina Anita**: szferenc15/cinema_world (Alkalmazások fejlesztése tantárgy közös beadandója, kliens oldal alapja)
-+ **Móger Tibor**: Hapcy/js-tech-anyagok/express (szerver oldal kiinduló alapja)
++ **Kapás Dorina Anita**: szferenc15/cinema_world (Alkalmazások fejlesztése tantárgy közös beadandója, kliensoldal alapja)
++ **Móger Tibor**: Hapcy/js-tech-anyagok/express (szerveroldal kiinduló alapja)

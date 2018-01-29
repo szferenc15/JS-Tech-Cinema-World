@@ -549,6 +549,10 @@ TODO:
 ## Egyed-kapcsolat diagram:
 ![alt text][ER]
 
+## Használat (Backend):
+1. CMD: **npm start** parancs futtatása a ***./cinema_world/cinema_inner_world*** útvonal alatt
+2. Az alkalmazás gyökere a **localhost:3000** socketen érhető el böngészőből
+
 ## Használat (Frontend):
 1. CMD: **ng serve** parancs futtatása a ***./cinema_world/cinema_outer_world*** útvonal alatt
 2. Az alkalmazás gyökere a **localhost:4200** socketen érhető el böngészőből

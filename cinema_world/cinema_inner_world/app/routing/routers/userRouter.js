@@ -1,51 +1,61 @@
 var express = require('express'),
 	usersModel = require('../../model/userModel'),
 	router = express.Router();
+var cors = require('cors')
 
 router
-	.route('/all')
-	.get(function(req, res) {
-		usersModel.find({}, function(err, users) {
-			if (err) {
-				res.send(err);
-				return;
+	.route('/login')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
+
+		usersModel.findOne(
+			{
+				username: postData.identifier
+			},
+			function(err, user) {
+				if (user === null) {
+					usersModel.findOne(
+						{
+							email: postData.identifier
+						},
+						function(err, user) {
+							
+							if (user === null) {
+								res.json({
+									type: 'error',
+									message: 'Wrong username or password'
+								});
+								return;
+							} else {
+								if (user.password === postData.password) {
+									res.json(user);
+									return;
+								}
+								res.json({
+									type: 'error',
+									message: 'Wrong email or password'
+								});
+								return;
+							}
+						}
+					);
+				} else {
+					if (user.password === postData.password) {
+						console.log("hereeee");
+						console.log(user);
+						res.json(user);
+						return;
+					}
+					res.json({
+						type: 'error',
+						message: 'Wrong email or password'
+					});
+					return;
+				}
 			}
-			res.json(users);
-		});
-	})
-	.post(function(req, res) {
-		var postData = req.body,
-			validationError = {
-				type: 'Validation Error',
-				message: ''
-			};
-
-		if (!postData.username) {
-			validationError.message = 'username is required';
-		}
-		if (!postData.password) {
-			validationError.message = 'password is required';
-		}
-		if (!postData.email) {
-			validationError.message = 'email is required';
-		}
-
-		if (validationError.message) {
-			res.json(validationError);
-
-			return;
-		}
-
-		usersModel.insert(postData, function(err, newUser) {
-			if (err) {
-				res.send(err);
-
-				return;
-			}
-
-			res.json(newUser);
-		});
-	});
+		);
+	}
+);
 
 router
 	.route('/users/:id')

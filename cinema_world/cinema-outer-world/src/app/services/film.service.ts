@@ -12,7 +12,7 @@ export class FilmService {
   constructor(private http: Http) {}
 
   getFilms(): Observable<Film[]> {
-    return this.http.get('http://localhost:8080/world/films').map((response: Response) => response.json().data);
+    return this.http.get('http://localhost:3000/api/film/all').map((response: Response) => response.json());
   }
 
   getActualFilmsOfCinema() {

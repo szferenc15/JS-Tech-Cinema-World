@@ -21,6 +21,6 @@ export interface Film {
   rate?: number;
   description?: string;
   categories?: Category[];
-  trailers?: Trailer[];
+  trailers?: string[];
   cinemas?: Cinema[];
 }

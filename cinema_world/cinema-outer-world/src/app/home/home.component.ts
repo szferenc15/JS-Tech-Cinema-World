@@ -39,13 +39,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
       this.films = films;
+      console.log(films);
       this.activeFilms = [
         this.films[this.activeFilmIndex],
         this.films[this.activeFilmIndex + 1],
         this.films[this.activeFilmIndex + 2],
       ];
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0].url);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0]);
       this.hasLoggedInUser = this.authService.isLoggedIn();
       this.loaded = true;
     })
@@ -66,7 +67,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.rate = Array(this.films[this.activeElement].rate - 1).fill(0).map((x,i)=>i);
       this.activeTrailer = 0;
       this.previousActiveElement = this.activeElement;
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0].url);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[0]);
     }
   }
 
@@ -90,13 +91,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   nextTrailer() {
     if (this.activeTrailer < this.films[this.activeElement].trailers.length - 1) {
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[++this.activeTrailer].url);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[++this.activeTrailer]);
     }
   }
 
   previousTrailer() {
     if (this.activeTrailer > 0) {
-      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[--this.activeTrailer].url);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.films[this.activeElement].trailers[--this.activeTrailer]);
     }
   }
 

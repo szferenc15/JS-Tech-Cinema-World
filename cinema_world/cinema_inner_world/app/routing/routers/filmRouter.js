@@ -1,16 +1,17 @@
 var express = require('express'),
 	filmModel = require('../../model/filmModel'),
 	router = express.Router();
+var cors = require('cors')
 
 router
 	.route('/all')
-	.get(function(req, res) {
-		filmModel.find({}, function(err, users) {
+	.get(cors(), function(req, res) {
+		filmModel.find({}, function(err, films) {
 			if (err) {
 				res.send(err);
 				return;
 			}
-			res.json(users);
+			res.json(films);
 		});
 	})
 	.post(function(req, res) {

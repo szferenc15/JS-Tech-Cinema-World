@@ -14,12 +14,12 @@ export class AuthenticationService {
 
     login(emailOrUsername: string, password: string) {
       let user = { identifier: emailOrUsername, password: password }
-      let loginPromise = this.http.post('http://localhost:8080/user/login', user).toPromise()
+      let loginPromise = this.http.post('http://localhost:3000/api/user/login', user).toPromise()
 
       loginPromise.then((response: Response) => {
         return response.json();
       }).then((response) => {
-        let user: User = response.data;
+        let user: User = response;
         this.activeUser.next(user);
         this.hasActiveUser.next(true);
         this.activeUsername = user.username;

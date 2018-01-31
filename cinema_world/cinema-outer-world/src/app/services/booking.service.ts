@@ -12,7 +12,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BookingService {
   screeningsOfSelectedCinema: Subject<Screening[]> = new Subject<Screening[]>();
-  cinemasOfSelectedFilm: Subject<Cinema[]> = new Subject<Cinema[]>();
   ticketsOfSelectedScreening: Subject<Ticket[]> = new Subject<Ticket[]>();
   selectedFilmName: Subject<string> = new Subject<string>();
   ageLimit: Subject<number> = new Subject<number>();

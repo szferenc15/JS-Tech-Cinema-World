@@ -23,7 +23,7 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + **Vendégként** szeretném egy film adatait, leírását, előzeteseit megtekinteni.
 + **Vendégként** szeretnék regisztrálni az oldalra.
 + **Felhasználóként** szeretnék bejelentkezni az oldalra.
-+ **Felhasználóként** szeretném jegyeket foglalni, illetve vásárolni.
++ **Felhasználóként** szeretnék jegyeket foglalni, illetve vásárolni.
 
 ## Nem funkcionális követelmények:
 + Használhatóság

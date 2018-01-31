@@ -4,9 +4,8 @@ import { Router } from '@angular/router';
 import { Film } from './../../interfaces/film.interface';
 import { FilmService } from './../../services/film.service';
 import { Subscription } from 'rxjs/Subscription';
-import { FilmInfo, FilmInfoDatabase } from './../film-info.database';
 import { MatTableDataSource } from '@angular/material/table';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { MatSort } from '@angular/material';
 
 @Component({
@@ -14,7 +13,7 @@ import { MatSort } from '@angular/material';
   templateUrl: './film-info.component.html',
   styleUrls: ['./film-info.component.css']
 })
-export class FilmInfoComponent implements OnInit {
+export class FilmInfoComponent implements OnInit, OnDestroy {
   @Input() selectedCinemaName = '';
   @Input() showFilms = false;
   @Input() selectedCinema: Cinema = null;
@@ -44,6 +43,10 @@ export class FilmInfoComponent implements OnInit {
       this.filmDataSource.sort = this.filmSort;
       this.loaded = true;
     })
+  }
+
+  ngOnDestroy() {
+    this.filmSubscription.unsubscribe();
   }
 
   setZeroAndFirstStageInfoOfBooking(film: Film) {

@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
       this.films = films;
-      console.log(films);
       this.activeFilms = [
         this.films[this.activeFilmIndex],
         this.films[this.activeFilmIndex + 1],

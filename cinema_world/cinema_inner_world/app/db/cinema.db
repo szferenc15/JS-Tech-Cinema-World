@@ -8,3 +8,4 @@
 {"_id":"7","country":"Macedonia","city":"Szkopje","district":"Bazaar","street":"Atanas Babata","house_number":100,"name":"CW Kurshumli An","amenities_charge":20}
 {"_id":"8","country":"Egyesult Kiralysag","city":"London","district":"No Hill","street":"Portobello Rd","house_number":104,"name":"CW Electric Porto","amenities_charge":60}
 {"_id":"9","country":"Egyesult Kiralysag","city":"London","district":"Sreditch","street":"Redchurch St","house_number":65,"name":"CW Electric Shore","amenities_charge":60}
+{"$$indexCreated":{"fieldName":"name","unique":true,"sparse":false}}

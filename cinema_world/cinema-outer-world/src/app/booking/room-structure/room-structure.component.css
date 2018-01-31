@@ -98,3 +98,8 @@
   font-size: 15px;
   line-height: 30px;
 }
+
+.next-btn:disabled {
+  background: #222222;
+  color: white;
+}

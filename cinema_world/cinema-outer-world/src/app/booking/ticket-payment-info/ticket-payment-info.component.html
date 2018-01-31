@@ -23,7 +23,8 @@
             <td>
               <mat-form-field>
                 <mat-select #tickets placeholder="Darab">
-                    <mat-option *ngFor="let index of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+                    <mat-option *ngFor="let index of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+                                (click)="checkTicketCount()"
                                 value="{{ index }}">
                                 {{ index }}
                     </mat-option>
@@ -65,9 +66,10 @@
         </div>
 
         <div class="pt-3">
-          <button class="btn btn-dark"
+          <button class="btn btn-dark next-btn"
                   mat-raised-button
                   matStepperNext
+                  [disabled]="isNextBtnDisabled"
                   (click)="setThirdStageInfoOfBooking()">
                   Következő
           </button>

@@ -73,3 +73,4 @@
 {"_id":"75","type":"Agyas 4D Fogy.elo + SZ","price":3310}
 {"_id":"8","type":"IMAX 3D Normal + SZ","price":2520}
 {"_id":"9","type":"IMAX 4D Normal","price":2450}
+{"$$indexCreated":{"fieldName":"type","unique":true,"sparse":false}}

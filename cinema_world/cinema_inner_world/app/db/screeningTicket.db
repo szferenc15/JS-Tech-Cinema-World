@@ -1,20 +1,20 @@
-{"_id":"1","screeningId":"1","type":"IMAX 3D Normal","price":2260}
-{"_id":"10","screeningId":"2","type":"IMAX 3D Fogy.elo","price":2020}
-{"_id":"11","screeningId":"1","type":"IMAX 3D Normal + SZ","price":2520}
-{"_id":"12","screeningId":"2","type":"IMAX 3D Normal + SZ","price":2520}
-{"_id":"13","screeningId":"1","type":"IMAX 3D Diak + SZ","price":2350}
-{"_id":"14","screeningId":"1","type":"IMAX 3D Junior + SZ","price":2350}
-{"_id":"15","screeningId":"1","type":"IMAX 3D Szenior + SZ","price":2350}
-{"_id":"16","screeningId":"1","type":"IMAX 3D Fogy.elo + SZ","price":2350}
-{"_id":"17","screeningId":"2","type":"IMAX 3D Fogy.elo + SZ","price":2350}
-{"_id":"18","screeningId":"2","type":"IMAX 3D Diak + SZ","price":2350}
-{"_id":"19","screeningId":"2","type":"IMAX 3D Junior + SZ","price":2350}
-{"_id":"2","screeningId":"1","type":"IMAX 3D Diak","price":2020}
-{"_id":"20","screeningId":"2","type":"IMAX 3D Szenior + SZ","price":2350}
-{"_id":"3","screeningId":"1","type":"IMAX 3D Junior","price":2020}
-{"_id":"4","screeningId":"1","type":"IMAX 3D Szenior","price":2020}
-{"_id":"5","screeningId":"1","type":"IMAX 3D Fogy.elo","price":2020}
-{"_id":"6","screeningId":"2","type":"IMAX 3D Normal","price":2260}
-{"_id":"7","screeningId":"2","type":"IMAX 3D Diak","price":2020}
-{"_id":"8","screeningId":"2","type":"IMAX 3D Junior","price":2020}
-{"_id":"9","screeningId":"2","type":"IMAX 3D Szenior","price":2020}
+{"_id":"1","screeningId":"1","type":"IMAX 3D Normal"}
+{"_id":"10","screeningId":"2","type":"IMAX 3D Fogy.elo"}
+{"_id":"11","screeningId":"1","type":"IMAX 3D Normal + SZ"}
+{"_id":"12","screeningId":"2","type":"IMAX 3D Normal + SZ"}
+{"_id":"13","screeningId":"1","type":"IMAX 3D Diak + SZ"}
+{"_id":"14","screeningId":"1","type":"IMAX 3D Junior + SZ"}
+{"_id":"15","screeningId":"1","type":"IMAX 3D Szenior + SZ"}
+{"_id":"16","screeningId":"1","type":"IMAX 3D Fogy.elo + SZ"}
+{"_id":"17","screeningId":"2","type":"IMAX 3D Fogy.elo + SZ"}
+{"_id":"18","screeningId":"2","type":"IMAX 3D Diak + SZ"}
+{"_id":"19","screeningId":"2","type":"IMAX 3D Junior + SZ"}
+{"_id":"2","screeningId":"1","type":"IMAX 3D Diak"}
+{"_id":"20","screeningId":"2","type":"IMAX 3D Szenior + SZ"}
+{"_id":"3","screeningId":"1","type":"IMAX 3D Junior"}
+{"_id":"4","screeningId":"1","type":"IMAX 3D Szenior"}
+{"_id":"5","screeningId":"1","type":"IMAX 3D Fogy.elo"}
+{"_id":"6","screeningId":"2","type":"IMAX 3D Normal"}
+{"_id":"7","screeningId":"2","type":"IMAX 3D Diak"}
+{"_id":"8","screeningId":"2","type":"IMAX 3D Junior"}
+{"_id":"9","screeningId":"2","type":"IMAX 3D Szenior"}

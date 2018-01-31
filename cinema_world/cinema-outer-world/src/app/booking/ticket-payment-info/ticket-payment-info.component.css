@@ -21,6 +21,8 @@ table {
   font-variant: small-caps;
 }
 
-
-
+.next-btn:disabled {
+  background: #222222;
+  color: white;
+}
 

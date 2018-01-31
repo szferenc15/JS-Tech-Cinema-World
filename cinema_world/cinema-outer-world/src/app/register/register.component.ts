@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { RegisterService } from './../services/register.service';
 import { matchOtherValidator } from '../validators/match-other-validate.validator';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -10,6 +11,8 @@ import { Response } from '@angular/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  response: string = '';
 
   registerForm = new FormGroup({
     username: new FormControl(null, [Validators.required,
@@ -24,10 +27,15 @@ export class RegisterComponent implements OnInit {
                                         Validators.pattern('^\\+?[0-9]{7,14}$')])
   });
 
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService,
+              private router: Router) { }
 
   ngOnInit() {
     this.registerService.getRegistration().subscribe((response: string) => {
+      this.response = response;
+      if (response['message'] == 'ok') {
+        this.router.navigateByUrl('/login');
+      }
       console.log(response);
     })
   }
@@ -35,5 +43,4 @@ export class RegisterComponent implements OnInit {
   register(username: string, password: string, email: string, phoneNumber: string) {
     this.registerService.register(username, password, email, phoneNumber);
   }
-
 }

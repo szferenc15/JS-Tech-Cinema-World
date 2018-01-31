@@ -28,7 +28,7 @@ export class BookingService {
 	isFromFilmInfoSubject: Subject<boolean> = new Subject<boolean>();
 	isFromFilmInfo: boolean = false;
 
-	constructor(private http: Http, private authService: AuthenticationService) {}
+	constructor(private http: Http) {}
 
 	getAgeLimit() {
 		return this.ageLimit;
@@ -161,7 +161,7 @@ export class BookingService {
                 this.ticketsOfSelectedScreening.next(response);
 
                 let bookingsOfScreening = this.http
-                  .post('http://localhost:3000/api/bookingTicket/bookingsOfScreening', selectedScreeningId)
+                  .post('http://localhost:3000/api/booking/bookingsOfScreening', selectedScreeningId)
                   .toPromise();
 
                 bookingsOfScreening
@@ -212,19 +212,11 @@ export class BookingService {
 
 		let newBooking = {
 			screeningId: screeningId,
-			username: this.authService.getUsername(),
+			username: JSON.parse(sessionStorage.getItem('user')).username,
 			paymentMethod: this.selectedPaymentMethodName,
 			bookings: bookingTypes
 		};
 
-		let bookingPromise = this.http.post('http://localhost:3000/api/bookingTicket/new_booking', newBooking).toPromise();
-
-		bookingPromise
-			.then((response: Response) => {
-				return response.json();
-			})
-			.then((response) => {
-				console.log(response);
-			});
+		let bookingPromise = this.http.post('http://localhost:3000/api/booking/new_booking', newBooking).toPromise();
 	}
 }

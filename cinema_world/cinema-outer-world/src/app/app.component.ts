@@ -12,8 +12,8 @@ export class AppComponent {
 
   leftMenu: Menu[] = [
     { name: "Aktuális filmek", path: "/films"},
-    /*{ name: "Büfé és jegyinformáció", path: "/cinema-ticket-info"},
-    { name: "Nyereményjáték", path: "/sweepstakes"},
+    { name: "Jegyinformáció", path: "/cinema-ticket-info"},
+    /*{ name: "Nyereményjáték", path: "/sweepstakes"},
     { name: "Díjak", path: "/awards"}*/
   ];
 

@@ -1,3 +1,4 @@
+import { BookingService } from './booking.service';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { User } from './../interfaces/user.interface';
@@ -10,7 +11,8 @@ export class AuthenticationService {
     hasActiveUser: Subject<boolean> = new Subject<boolean>();
     activeUsername: string = null;
 
-    constructor(private http: Http) { }
+    constructor(private http: Http,
+                private bookingService: BookingService) { }
 
     login(emailOrUsername: string, password: string) {
       let user = { identifier: emailOrUsername, password: password }
@@ -34,6 +36,11 @@ export class AuthenticationService {
 
     isLoggedIn(): boolean {
         return sessionStorage.getItem('user') != null;
+    }
+
+    hasFilmSelected(): boolean {
+      return this.bookingService.getSelectedFilmTitle() != '' &&
+             this.bookingService.getSelectedFilmTitle() != null;
     }
 
     getHasActiveUser() {

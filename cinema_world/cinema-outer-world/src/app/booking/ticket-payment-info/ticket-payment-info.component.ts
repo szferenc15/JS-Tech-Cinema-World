@@ -15,10 +15,12 @@ export class TicketPaymentInfoComponent implements OnInit, OnDestroy {
 
   availableTickets: Ticket[] = [];
   amenitiesCharge: number = null;
+  isNextBtnDisabled = true;
 
   ticketSubscription: Subscription;
 
   paymentMethods: PaymentMethod[] = [
+    {name: 'Foglalas', picture: '../../../assets/booking.png'},
     {name: 'PayPal', picture: '../../../assets/paypal.png'},
     {name: 'MasterCard', picture: '../../../assets/master_card.png'},
     {name: 'Maestro', picture: '../../../assets/maestro.png'},
@@ -47,11 +49,24 @@ export class TicketPaymentInfoComponent implements OnInit, OnDestroy {
 
   setSelectedPaymentMethod(paymentMethod) {
     this.selectedPaymentMethod = paymentMethod;
+    this.checkTicketCount();
+  }
+
+  checkTicketCount() {
+    let ticketResults = this.tickets['_results'].filter((option) => {
+      return option.selected != null && option.selected.value != 0;
+    });
+
+    if (ticketResults.length > 0 && this.selectedPaymentMethod.name != null) {
+      this.isNextBtnDisabled = false;
+    } else {
+      this.isNextBtnDisabled = true;
+    }
   }
 
   setThirdStageInfoOfBooking() {
     let ticketResults = this.tickets['_results'].filter((option) => {
-      return option.selected != null;
+      return option.selected != null && option.selected.value != 0;
     });
 
     for (let i = 0; i < ticketResults.length; i++) {

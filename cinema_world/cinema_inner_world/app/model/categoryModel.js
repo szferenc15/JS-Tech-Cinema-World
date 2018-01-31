@@ -6,4 +6,6 @@ var Datastore = require('nedb'),
     autoload: true
   });
 
+  categoryDb.ensureIndex({ fieldName: 'category', unique: true });
+
 module.exports = categoryDb;

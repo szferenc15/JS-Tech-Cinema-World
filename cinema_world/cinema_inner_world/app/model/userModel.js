@@ -6,4 +6,7 @@ var Datastore = require('nedb'),
     autoload: true
   });
 
+  userDb.ensureIndex({ fieldName: 'username', unique: true });
+  userDb.ensureIndex({ fieldName: 'email', unique: true });
+
 module.exports = userDb;

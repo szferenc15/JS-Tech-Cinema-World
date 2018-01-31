@@ -6,4 +6,6 @@ var Datastore = require('nedb'),
     autoload: true
   });
 
+  cinemaDb.ensureIndex({ fieldName: 'name', unique: true });
+
 module.exports = cinemaDb;

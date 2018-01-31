@@ -6,4 +6,6 @@ var Datastore = require('nedb'),
     autoload: true
   });
 
+  ticketDb.ensureIndex({ fieldName: 'type', unique: true });
+
 module.exports = ticketDb;

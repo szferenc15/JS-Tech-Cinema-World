@@ -6,7 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { FilmInfoDatabase, FilmInfo } from './film-info.database';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({

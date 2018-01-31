@@ -3,79 +3,42 @@ var express = require('express'),
 	router = express.Router();
 var cors = require('cors');
 
-router
-	.route('/all')
-	.get(cors(), function(req, res) {
-		screeningTicketModel.find({}, function(err, users) {
-			if (err) {
-				res.send(err);
-				return;
-			}
-			res.json(users);
-		});
-	})
-	.post(function(req, res) {
-		var postData = req.body,
-			validationError = {
-				type: 'Validation Error',
-				message: ''
-			};
-
-		if (!postData.username) {
-			validationError.message = 'username is required';
-		}
-		if (!postData.password) {
-			validationError.message = 'password is required';
-		}
-		if (!postData.email) {
-			validationError.message = 'email is required';
-		}
-
-		if (validationError.message) {
-			res.json(validationError);
-
+router.route('/all').get(cors(), function(req, res) {
+	screeningTicketModel.find({}, function(err, screeningTickets) {
+		if (err) {
+			res.send(err);
 			return;
 		}
+		res.json(screeningTickets);
+	});
+});
 
-		screeningTicketModel.insert(postData, function(err, newUser) {
+router.route('/getTickets').post(cors(), function(req, res) {
+	var postData = req.body;
+
+	screeningTicketModel.find(
+		{
+			screeningId: postData._id
+		},
+		function(err, screeningTickets) {
 			if (err) {
 				res.send(err);
 
 				return;
 			}
 
-			res.json(newUser);
-		});
-	});
+			if (screeningTickets === null) {
+				res.json({
+					type: 'error',
+					message: 'No tickets'
+				});
 
-router
-	.route('/getTickets')
-	.post(cors(), function(req, res) {
-		var postData = req.body;
-
-		screeningTicketModel.find(
-			{
-				screeningId: postData._id,
-			},
-			function(err, screeningTickets) {
-				if (err) {
-					res.send(err);
-
-					return;
-				}
-
-				if (screeningTickets === null) {
-					res.json({
-						type: 'error',
-						message: 'No tickets'
-					});
-
-					return;
-				}
-
-				res.json(screeningTickets);
+				return;
 			}
-		);
-	})
+
+			res.json(screeningTickets);
+		}
+	);
+});
 
 module.exports = router;

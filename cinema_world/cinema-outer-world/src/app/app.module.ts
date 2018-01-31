@@ -1,3 +1,5 @@
+import { CanActivateViaAuthGuardProfile } from './route-guards/authentication.guard.profile';
+import { CanActivateViaAuthGuardBooking } from './route-guards/authentication.guard.booking';
 import { TicketService } from './services/ticket.service';
 import { RegisterService } from './services/register.service';
 import { BookingService } from './services/booking.service';
@@ -33,7 +35,6 @@ import { RoomStructureComponent } from './booking/room-structure/room-structure.
 import { SummaryComponent } from './booking/summary/summary.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthenticationService } from "./services/authentication.service";
-import { CanActivateViaAuthGuard } from "./route-guards/authentication.guard";
 
 import { MatButtonModule, MatSortModule,
          MatTableModule, MatSlideToggleModule,
@@ -53,9 +54,8 @@ const appRoutes: Routes = [
   { path: 'awards', component: AwardsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'booking', component: BookingComponent, canActivate: [CanActivateViaAuthGuard]},
-  { path: 'profile', component: ProfileComponent, canActivate: [CanActivateViaAuthGuard] },
-  { path: 'booking', component: BookingComponent},
+  { path: 'booking', component: BookingComponent, canActivate: [CanActivateViaAuthGuardBooking] },
+  { path: 'profile', component: ProfileComponent, canActivate: [CanActivateViaAuthGuardProfile] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -108,7 +108,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthenticationService,
-              CanActivateViaAuthGuard,
+              CanActivateViaAuthGuardProfile,
+              CanActivateViaAuthGuardBooking,
               FilmService,
               CinemaService,
               ScreeningService,

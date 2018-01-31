@@ -52,10 +52,6 @@ export class BookingService {
     return this.selectedCinemaName;
   }
 
-  getCinemasOfSelectedFilm() {
-    return this.cinemasOfSelectedFilm;
-  }
-
   getScreeningsOfSelectedCinema() {
     return this.screeningsOfSelectedCinema;
   }
@@ -90,13 +86,6 @@ export class BookingService {
 
   setZeroStageInfoOfBooking(film: Film) {
     this.selectedFilmName.next(film.title);
-    this.selectedFilmTitle = film.title;
-    let nonEmptyCinemasOfFilm = film.cinemas.filter((cinema: Cinema) => {
-      for (let i = 0; i < cinema.screenings.length; i++) {
-        return cinema.screenings[i].filmTitle === film.title;
-      }
-    })
-    this.cinemasOfSelectedFilm.next(nonEmptyCinemasOfFilm);
     this.ageLimit.next(film.ageLimit);
   }
 

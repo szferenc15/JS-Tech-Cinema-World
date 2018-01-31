@@ -1,3 +1,2 @@
-{"username":"barackfa","password":"Dr123$,.-","email":"barackfa@barackfa.fa","phoneNumber":"06302003000","adminRight":false,"_id":"081SD6VBQb4Vx0Rg"}
-{"username":"almafa","password":"Dr123$,.-","email":"almafa@almafa.fa","phoneNumber":"06302003005","adminRight":false,"_id":"Qx2WNw8y9vPgUfOU"}
-{"username":"admin","password":"Dr123$,.-","email":"admin@admin.com","phoneNumber":"06302003010","adminRight":true,"_id":"TdTCkDpLes30WsN8"}
+{"_id":"1","username":"barackfa","password":"Dr123$,.-","email":"barackfa@barackfa.fa","phoneNumber":"06302003000"}
+{"_id":"2","username":"almafa","password":"Dr123$,.-","email":"almafa@almafa.fa","phoneNumber":"06302003005"}

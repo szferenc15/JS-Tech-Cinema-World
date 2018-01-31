@@ -19,13 +19,12 @@ router
 							email: postData.identifier
 						},
 						function(err, user) {
-							
+
 							if (user === null) {
 								res.json({
 									type: 'error',
-									message: 'Wrong username or password'
+									message: 'Helytelen felhasznalonev vagy jelszo'
 								});
-								return;
 							} else {
 								if (user.password === postData.password) {
 									res.json(user);
@@ -33,24 +32,20 @@ router
 								}
 								res.json({
 									type: 'error',
-									message: 'Wrong email or password'
+									message: 'Helytelen email cim vagy jelszo'
 								});
-								return;
 							}
 						}
 					);
 				} else {
 					if (user.password === postData.password) {
-						console.log("hereeee");
-						console.log(user);
 						res.json(user);
 						return;
 					}
 					res.json({
 						type: 'error',
-						message: 'Wrong email or password'
+						message: 'Helytelen email cim vagy jelszo'
 					});
-					return;
 				}
 			}
 		);
@@ -58,99 +53,45 @@ router
 );
 
 router
-	.route('/users/:id')
-	.put(function(req, res) {
+	.route('/register')
+	.put(cors(), function(req, res) {
+		var postData = req.body;
+
 		usersModel.findOne(
 			{
-				_id: req.params.id
+				username: postData.username
 			},
 			function(err, user) {
-				var prop;
-
-				if (err) {
-					res.send(err);
-
-					return;
-				}
-
 				if (user === null) {
-					res.json({
-						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
-					});
-
-					return;
-				}
-
-				for (prop in req.body) {
-					if (prop !== '_id') {
-						user[prop] = req.body[prop];
-					}
-				}
-
-				usersModel.update(
-					{
-						_id: user._id
-					},
-					user,
-					{},
-					function(err, numReplaced) {
-						if (err) {
-							res.send(err);
-
-							return;
+					usersModel.findOne(
+						{
+							email: postData.email
+						},
+						function(err, user) {
+							if (user === null) {
+								let newUser = {
+									username: postData.username,
+									password: postData.password,
+									email: postData.email,
+									phoneNumber: postData.phoneNumber
+								}
+								usersModel.insert(newUser);
+							} else {
+								res.json({
+									type: 'error',
+									message: 'A felhasznalonevnek es az emailnek is egyedinek kell lennie'
+								})
+							}
 						}
-
-						res.json({
-							type: 'success',
-							message: 'Replaced ' + numReplaced + ' user(s).'
-						});
-					}
-				);
-			}
-		);
-	})
-	.get(function(req, res) {
-		usersModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-
-					return;
-				}
-
-				if (user === null) {
+					);
+				} else {
 					res.json({
 						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
-					});
-
-					return;
+						message: 'A felhasznalonevnek es az emailnek is egyedinek kell lennie'
+					})
 				}
-
-				res.json(user);
 			}
 		);
 	})
-	.delete(function(req, res) {
-		usersModel.remove(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-				}
-
-				res.json({
-					type: 'success',
-					message: 'Successfully deleted user with id "' + req.params.id + '".'
-				});
-			}
-		);
-	});
 
 module.exports = router;

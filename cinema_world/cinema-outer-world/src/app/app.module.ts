@@ -44,8 +44,6 @@ import { MatButtonModule, MatSortModule,
          MatStepperModule, MatDatepickerModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { BookingInfoComponent } from './booking/booking-info/booking-info.component';
-import { AdminComponent } from './profile/admin/admin.component';
-
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -85,7 +83,6 @@ const appRoutes: Routes = [
     SummaryComponent,
     ProfileComponent,
     BookingInfoComponent,
-    AdminComponent
   ],
   imports: [
     BrowserModule,

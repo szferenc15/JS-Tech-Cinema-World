@@ -47,7 +47,7 @@ export class FilmComponent implements OnInit {
 
   ngOnInit() {
     if (this.inStepper) {
-      this.cinemaSubscription = this.bookingService.getCinemasOfSelectedFilm().subscribe((cinemas: Cinema[]) => {
+      this.cinemaSubscription = this.cinemaService.getCinemas().subscribe((cinemas: Cinema[]) => {
         this.cinemas = cinemas;
         this.filteredCinemas = this.cinemas;
         this.loaded = true;

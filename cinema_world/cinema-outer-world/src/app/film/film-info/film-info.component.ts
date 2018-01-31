@@ -39,7 +39,7 @@ export class FilmInfoComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.filmSubscription = this.filmService.getActualFilmsOfCinema().subscribe((films: Film[]) => {
+    this.filmSubscription = this.filmService.getFilms().subscribe((films: Film[]) => {
       this.filmDataSource = new MatTableDataSource<Film>(films);
       this.filmDataSource.sort = this.filmSort;
       this.loaded = true;

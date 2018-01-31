@@ -38,27 +38,9 @@
               {{ activeUser.phoneNumber }}
             </td>
           </tr>
-          <tr>
-            <td class="pr-3">
-              Szint:
-            </td>
-            <td>
-              {{ activeUser.adminRight ? "Adminisztrátor" : "Felhasználó"}}
-            </td>
-          </tr>
         </table>
 
       </div>
-    </div>
-
-    <div *ngIf="isAdminUser" class="col-lg-5 col-xs-5 col-md-5 col-sm-5 pt-4 pb-5" align="center">
-        <table>
-          <tr>
-            <td>
-                <app-admin></app-admin>
-            </td>
-          </tr>
-        </table>
     </div>
 
   </div>

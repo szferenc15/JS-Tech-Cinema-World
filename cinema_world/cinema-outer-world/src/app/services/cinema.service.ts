@@ -9,7 +9,7 @@ export class CinemaService {
     constructor(private http: Http) {}
 
     getCinemas(): Observable<Cinema[]> {
-      return this.http.get('http://localhost:8080/world/cinemas').map((response: Response) => response.json().data);
+      return this.http.get('http://localhost:3000/api/cinema/all').map((response: Response) => response.json());
     }
 
 }

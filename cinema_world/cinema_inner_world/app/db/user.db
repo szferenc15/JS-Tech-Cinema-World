@@ -1,4 +1,2 @@
 {"_id":"1","username":"barackfa","password":"Dr123$,.-","email":"barackfa@barackfa.fa","phoneNumber":"06302003000"}
 {"_id":"2","username":"almafa","password":"Dr123$,.-","email":"almafa@almafa.fa","phoneNumber":"06302003005"}
-{"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
-{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}

@@ -1,22 +1,22 @@
-{"_id":"1","film_title":"Dzsungel","category":"Akcio"}
-{"_id":"11","film_title":"Az igazsag ligaja","category":"Akcio"}
-{"_id":"12","film_title":"Az igazsag ligaja","category":"Fantasy"}
-{"_id":"13","film_title":"Az igazsag ligaja","category":"Kaland"}
-{"_id":"14","film_title":"Coco","category":"Animacios"}
-{"_id":"15","film_title":"Coco","category":"Csaladi"}
-{"_id":"16","film_title":"Coco","category":"Kaland"}
-{"_id":"17","film_title":"A viszkis","category":"Akcio"}
-{"_id":"18","film_title":"Paddington 2","category":"Animacios"}
-{"_id":"19","film_title":"Paddington 2","category":"Kaland"}
-{"_id":"2","film_title":"Dzsungel","category":"Kaland"}
-{"_id":"20","film_title":"Paddington 2","category":"Vigjatek"}
-{"_id":"21","film_title":"Star Wars: Az utolso Jedik","category":"Fantasy"}
-{"_id":"22","film_title":"Star Wars: Az utolso Jedik","category":"Kaland"}
-{"_id":"23","film_title":"Star Wars: Az utolso Jedik","category":"Sci-Fi"}
-{"_id":"3","film_title":"Thor: Ragnarok","category":"Akcio"}
-{"_id":"4","film_title":"Thor: Ragnarok","category":"Kaland"}
-{"_id":"5","film_title":"Thor: Ragnarok","category":"Fantasy"}
-{"_id":"6","film_title":"Rossz anyak karacsonya","category":"Vigjatek"}
-{"_id":"7","film_title":"Gyilkossag az Orient Expresszen","category":"Drama"}
-{"_id":"8","film_title":"Gyilkossag az Orient Expresszen","category":"Bunugyi"}
-{"_id":"9","film_title":"Boldog halalnapot!","category":"Thriller"}
+{"_id":"1","filmTitle":"Dzsungel","category":"Akcio"}
+{"_id":"11","filmTitle":"Az igazsag ligaja","category":"Akcio"}
+{"_id":"12","filmTitle":"Az igazsag ligaja","category":"Fantasy"}
+{"_id":"13","filmTitle":"Az igazsag ligaja","category":"Kaland"}
+{"_id":"14","filmTitle":"Coco","category":"Animacios"}
+{"_id":"15","filmTitle":"Coco","category":"Csaladi"}
+{"_id":"16","filmTitle":"Coco","category":"Kaland"}
+{"_id":"17","filmTitle":"A viszkis","category":"Akcio"}
+{"_id":"18","filmTitle":"Paddington 2","category":"Animacios"}
+{"_id":"19","filmTitle":"Paddington 2","category":"Kaland"}
+{"_id":"2","filmTitle":"Dzsungel","category":"Kaland"}
+{"_id":"20","filmTitle":"Paddington 2","category":"Vigjatek"}
+{"_id":"21","filmTitle":"Star Wars: Az utolso Jedik","category":"Fantasy"}
+{"_id":"22","filmTitle":"Star Wars: Az utolso Jedik","category":"Kaland"}
+{"_id":"23","filmTitle":"Star Wars: Az utolso Jedik","category":"Sci-Fi"}
+{"_id":"3","filmTitle":"Thor: Ragnarok","category":"Akcio"}
+{"_id":"4","filmTitle":"Thor: Ragnarok","category":"Kaland"}
+{"_id":"5","filmTitle":"Thor: Ragnarok","category":"Fantasy"}
+{"_id":"6","filmTitle":"Rossz anyak karacsonya","category":"Vigjatek"}
+{"_id":"7","filmTitle":"Gyilkossag az Orient Expresszen","category":"Drama"}
+{"_id":"8","filmTitle":"Gyilkossag az Orient Expresszen","category":"Bunugyi"}
+{"_id":"9","filmTitle":"Boldog halalnapot!","category":"Thriller"}

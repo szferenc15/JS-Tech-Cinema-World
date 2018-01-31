@@ -14,4 +14,3 @@
 {"_id":"7","category":"Vigjatek"}
 {"_id":"8","category":"Zenes"}
 {"_id":"9","category":"Oneletrajzi"}
-{"$$indexCreated":{"fieldName":"category","unique":true,"sparse":false}}

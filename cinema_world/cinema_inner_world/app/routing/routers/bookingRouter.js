@@ -20,14 +20,14 @@ router.route('/bookingsOfScreening').post(cors(), function(req, res) {
 		{
 			screeningId: postData._id
 		},
-		function(err, bookingTickets) {
+		function(err, bookings) {
 			if (err) {
 				res.send(err);
 
 				return;
 			}
 
-			if (bookingTickets === null) {
+			if (bookings === null) {
 				res.json({
 					type: 'error',
 					message: 'No bookings'
@@ -36,21 +36,21 @@ router.route('/bookingsOfScreening').post(cors(), function(req, res) {
 				return;
 			}
 
-			res.json(bookingTickets);
+			res.json(bookings);
 		}
 	);
 });
 
-router.route('/new_booking').post(cors(), function(req, res) {
-	var postData = req.body;
-	for (let i = 0; i < postData.bookings.length; i++) {
+router.route('/new_booking').put(cors(), function(req, res) {
+	var putData = req.body;
+	for (let i = 0; i < putData.bookings.length; i++) {
 		let newBooking = {
-			screeningId: postData.screeningId,
-			username: postData.username,
-			payment: postData.paymentMethod,
-			type: postData.bookings[i].type,
-			row: postData.bookings[i].row,
-			chair: postData.bookings[i].chair
+			screeningId: putData.screeningId,
+			username: putData.username,
+			payment: putData.paymentMethod,
+			type: putData.bookings[i].type,
+			row: putData.bookings[i].row,
+			chair: putData.bookings[i].chair
 		};
 		bookingModel.insert(newBooking);
 	}

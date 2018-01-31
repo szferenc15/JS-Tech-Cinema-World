@@ -1,11 +1,10 @@
-{"_id":"1","country":"Magyarorszag","city":"Budapest","district":"VIII","street":"Kerepesi","house_number":9,"name":"CW Arena","amenities_charge":40}
-{"_id":"10","country":"Oroszorszag","city":"Moszkva","district":"XVI","street":"Bol''shoy Ovchinnikovskiy Pereulok","house_number":16,"name":"CW Pyat'' Zvozd","amenities_charge":100}
-{"_id":"2","country":"Magyarorszag","city":"Budapest","district":"XI","street":"Oktober huszonharmadika","house_number":8,"name":"CW Allee","amenities_charge":40}
-{"_id":"3","country":"Magyarorszag","city":"Budapest","district":"X","street":"Vaci","house_number":1,"name":"CW Westend","amenities_charge":40}
-{"_id":"4","country":"Magyarorszag","city":"Budapest","district":"II","street":"Lovohaz","house_number":5,"name":"CW Mammut 2","amenities_charge":40}
-{"_id":"5","country":"Magyarorszag","city":"Budapest","district":"III","street":"Becsi","house_number":38,"name":"CW Bed Cinema","amenities_charge":40}
-{"_id":"6","country":"Magyarorszag","city":"Kecskemet","district":"Belvaros","street":"Korona","house_number":2,"name":"CW Malom","amenities_charge":20}
-{"_id":"7","country":"Macedonia","city":"Szkopje","district":"Bazaar","street":"Atanas Babata","house_number":100,"name":"CW Kurshumli An","amenities_charge":20}
-{"_id":"8","country":"Egyesult Kiralysag","city":"London","district":"No Hill","street":"Portobello Rd","house_number":104,"name":"CW Electric Porto","amenities_charge":60}
-{"_id":"9","country":"Egyesult Kiralysag","city":"London","district":"Sreditch","street":"Redchurch St","house_number":65,"name":"CW Electric Shore","amenities_charge":60}
-{"$$indexCreated":{"fieldName":"name","unique":true,"sparse":false}}
+{"_id":"1","country":"Magyarorszag","city":"Budapest","district":"VIII","street":"Kerepesi","houseNumber":9,"name":"CW Arena","amenitiesCharge":40}
+{"_id":"10","country":"Oroszorszag","city":"Moszkva","district":"XVI","street":"Bol''shoy Ovchinnikovskiy Pereulok","houseNumber":16,"name":"CW Pyat'' Zvozd","amenitiesCharge":100}
+{"_id":"2","country":"Magyarorszag","city":"Budapest","district":"XI","street":"Oktober huszonharmadika","houseNumber":8,"name":"CW Allee","amenitiesCharge":40}
+{"_id":"3","country":"Magyarorszag","city":"Budapest","district":"X","street":"Vaci","houseNumber":1,"name":"CW Westend","amenitiesCharge":40}
+{"_id":"4","country":"Magyarorszag","city":"Budapest","district":"II","street":"Lovohaz","houseNumber":5,"name":"CW Mammut 2","amenitiesCharge":40}
+{"_id":"5","country":"Magyarorszag","city":"Budapest","district":"III","street":"Becsi","houseNumber":38,"name":"CW Bed Cinema","amenitiesCharge":40}
+{"_id":"6","country":"Magyarorszag","city":"Kecskemet","district":"Belvaros","street":"Korona","houseNumber":2,"name":"CW Malom","amenitiesCharge":20}
+{"_id":"7","country":"Macedonia","city":"Szkopje","district":"Bazaar","street":"Atanas Babata","houseNumber":100,"name":"CW Kurshumli An","amenitiesCharge":20}
+{"_id":"8","country":"Egyesult Kiralysag","city":"London","district":"No Hill","street":"Portobello Rd","houseNumber":104,"name":"CW Electric Porto","amenitiesCharge":60}
+{"_id":"9","country":"Egyesult Kiralysag","city":"London","district":"Sreditch","street":"Redchurch St","houseNumber":65,"name":"CW Electric Shore","amenitiesCharge":60}

@@ -217,6 +217,6 @@ export class BookingService {
 			bookings: bookingTypes
 		};
 
-		let bookingPromise = this.http.post('http://localhost:3000/api/booking/new_booking', newBooking).toPromise();
+		let bookingPromise = this.http.put('http://localhost:3000/api/booking/new_booking', newBooking).toPromise();
 	}
 }

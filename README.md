@@ -17,18 +17,13 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 ## Szerepkörök:
 + **Vendég**
 + **Felhasználó**
-+ **Adminisztrátor**
 
 ## Funkcionális követelmények:
 + **Vendégként** szeretnék a filmek között szabadon böngészni.
 + **Vendégként** szeretném egy film adatait, leírását, előzeteseit megtekinteni.
-+ **Vendégként** szeretnék filmeket keresni.
 + **Vendégként** szeretnék regisztrálni az oldalra.
 + **Felhasználóként** szeretnék bejelentkezni az oldalra.
-+ **Felhasználóként** szeretném szerkeszteni a profiladataimat.
-+ **Felhasználóként** szeretném a saját foglalásaim, illetve vásárlásaim megtekinteni.
-+ **Felhasználóként** szeretném értékelni a filmeket.
-+ **Adminisztrátorként** szeretnék új filmeket hozzáadni a műsorlistához, illetve törölni is róla.
++ **Felhasználóként** szeretném jegyeket foglalni, illetve vásárolni.
 
 ## Nem funkcionális követelmények:
 + Használhatóság
@@ -47,15 +42,6 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 + **[Express]** - Node JS webalkalmazási keretrendszer (szerveroldal)
 + **[NeDB]** - JavaScript adatbáziskezelő (szerveroldal)
 + **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
-
-```
-TODO: 
-    1. admin jogok
-    2. büfé
-    3. nyereményjáték
-    4. díjak
-    5. foglaláshoz vissza gomb/booking
-```
 
 ## Adatbázis séma:
 
@@ -104,25 +90,6 @@ TODO:
         <td align="center" width="33%">AMENITIES_CHARGE</td>
         <td align="center" width="33%">SMALLINT</td>
         <td align="justify" width="33%">kényelmi díj értéke</td>
-    </tr>
-</table>
-
-<table align="center" width="100%">
-    <th colspan="3" width="100%">BOOKING</th>
-    <tr align="center" width="100%">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">foglalás azonosítója (PK)</td>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">SCREENING_ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">vetítés azonosítója (FK)</td>
     </tr>
 </table>
 
@@ -231,24 +198,10 @@ TODO:
         <td align="center" width="33%">VARCHAR2(500)</td>
         <td align="justify" width="33%">leírás</td>
     </tr>
-</table>
-
-<table align="center" width="100%">
-    <th colspan="3" width="100%">TRAILER</th>
     <tr align="center" width="100%">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">URL</td>
-        <td align="center" width="33%">VARCHAR2(200)</td>
-        <td align="justify" width="33%">film előzetes url címe (PK)</td>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">FILM_TITLE</td>
-        <td align="center" width="33%">VARCHAR2(50)</td>
-        <td align="justify" width="33%">film címe (FK)</td>
+        <td align="center" width="33%">TRAILERS</td>
+        <td align="center" width="33%">ARRAY</td>
+        <td align="justify" width="33%">film előzeteseinek url címei egy tömbben</td>
     </tr>
 </table>
 
@@ -429,7 +382,7 @@ TODO:
 </table>
 
 <table align="center" width="100%">
-    <th colspan="3" width="100%">BOOKING_TICKET</th>
+    <th colspan="3" width="100%">BOOKING</th>
     <tr align="center" width="100%">
         <th width="33%">ATTRIBÚTUM</th>
         <th width="33%">TÍPUS</th>
@@ -506,48 +459,137 @@ TODO:
     </tr>
 </table>
 
-### Implicit kapcsoló-táblák:
-
-<table align="center" width="100%">
-    <th colspan="3" width="100%">USER_BOOKING</th>
-    <tr align="center" width="100%">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">USERNAME</td>
-        <td align="center" width="33%">VARCHAR2(15)</td>
-        <td align="justify" width="33%">felhasználónév (FK)</td>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">BOOKING_ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">foglalás azonosítója (FK)</td>
-    </tr>
-</table>
-
-<table align="center" width="100%">
-    <th colspan="3" width="100%">CINEMA_FILM</th>
-    <tr align="center" width="100%">
-        <th width="33%">ATTRIBÚTUM</th>
-        <th width="33%">TÍPUS</th>
-        <th width="33%">LEÍRÁS</th>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">CINEMA_ID</td>
-        <td align="center" width="33%">BIGINT</td>
-        <td align="justify" width="33%">mozi azonosítója (FK)</td>
-    </tr>
-    <tr align="center" width="100%">
-        <td align="center" width="33%">FILM_TITLE</td>
-        <td align="center" width="33%">VARCHAR2(50)</td>
-        <td align="justify" width="33%">film címe (FK)</td>
-    </tr>
-</table>
-
 ## Egyed-kapcsolat diagram:
 ![alt text][ER]
+
+## Végpontok:
+```
+Root: http://localhost:3000/api
+
+/category
+    GET
+        /all
+            res: {
+                category: Category[]
+            }
+/cinema
+    GET
+        /all
+            res: {
+                cinema: Cinema[]
+            }
+/filmCategory
+    GET
+        /all
+            res: {
+                filmCategory: FilmCategory[]
+            }
+/film
+    GET
+        /all
+            res: {
+                film: Film[]
+            }
+/room
+    GET
+        /all
+            res: {
+                room: Room[]
+            }
+    POST
+        /roomOfScreening
+            req: {
+                _id: number,
+            }
+            res: {
+               room: Room
+            }
+/booking
+    GET
+        /all
+            res {
+                booking: Booking[]
+            }
+    POST 
+        /bookingsOfScreening
+            req: {
+                _id: string,
+            }
+            res: {
+               booking: Booking[]
+            }
+    PUT
+        /new_booking
+            req: [{
+                booking: Booking[]
+            }]
+            res: {
+                message: string
+            }
+/screening
+    GET
+        /all
+            res: {
+                screening: Screening[]
+            }
+    POST
+        /cinema/film
+             req: {
+                id: string,
+                filmTitle: string
+            }
+            res: {
+               screening: Screenings[]
+            }
+/screeningTicket
+    GET
+        /all
+            res: {
+                screeningTicket: ScreeningTicket[]
+            }
+    POST
+        /getTickets
+             req: {
+                _id: string
+            }
+            res: {
+               screeningTicket: ScreeningTicket[]
+            }
+/ticket
+    GET
+        /all
+            res: {
+                ticket: Ticket[]
+            }
+    POST
+        /getTicketInformation
+             req: {
+                type: string[]
+            }
+            res: {
+               ticket: Ticket[]
+            }
+/user
+    POST
+        /login
+            req: {
+                identifier: string,
+                password: string
+            }
+            res: {
+               message: string
+            }
+        /register
+            req: {
+                username: string,
+                password: string,
+                email: string,
+                phoneNumber: number
+            }
+            res: {
+               message: string
+            }
+```
 
 ## Használat (Backend):
 1. CMD: **npm start** parancs futtatása a ***./cinema_world/cinema_inner_world*** útvonal alatt

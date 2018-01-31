@@ -2,6 +2,7 @@ import { Screening } from './screening.interface';
 import { Film } from './film.interface';
 
 export interface Cinema {
+  _id?: number;
   country?: string;
   city?: string;
   district?: string;

@@ -1,6 +1,7 @@
 var express = require('express'),
 	screeningModel = require('../../model/screeningModel'),
 	router = express.Router();
+var cors = require('cors');
 
 router
 	.route('/all')
@@ -13,90 +14,35 @@ router
 			res.json(users);
 		});
 	})
-	.post(function(req, res) {
-		var postData = req.body,
-			validationError = {
-				type: 'Validation Error',
-				message: ''
-			};
 
-		if (!postData.username) {
-			validationError.message = 'username is required';
-		}
-		if (!postData.password) {
-			validationError.message = 'password is required';
-		}
-		if (!postData.email) {
-			validationError.message = 'email is required';
-		}
-
-		if (validationError.message) {
-			res.json(validationError);
-
-			return;
-		}
-
-		screeningModel.insert(postData, function(err, newUser) {
-			if (err) {
-				res.send(err);
-
-				return;
-			}
-
-			res.json(newUser);
-		});
-	});
 
 router
-	.route('/users/:id')
-	.put(function(req, res) {
-		screeningModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				var prop;
+	.route('/cinema/film')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
 
+		screeningModel.find(
+			{
+				cinemaId: postData.id,
+				filmTitle: postData.filmTitle
+			},
+			function(err, screenings) {
 				if (err) {
 					res.send(err);
 
 					return;
 				}
 
-				if (user === null) {
+				if (screenings === null) {
 					res.json({
 						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
+						message: 'No screenings'
 					});
 
 					return;
 				}
 
-				for (prop in req.body) {
-					if (prop !== '_id') {
-						user[prop] = req.body[prop];
-					}
-				}
-
-				screeningModel.update(
-					{
-						_id: user._id
-					},
-					user,
-					{},
-					function(err, numReplaced) {
-						if (err) {
-							res.send(err);
-
-							return;
-						}
-
-						res.json({
-							type: 'success',
-							message: 'Replaced ' + numReplaced + ' user(s).'
-						});
-					}
-				);
+				res.json(screenings);
 			}
 		);
 	})

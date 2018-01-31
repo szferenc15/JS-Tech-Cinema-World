@@ -1,6 +1,7 @@
 var express = require('express'),
 	ticketModel = require('../../model/ticketModel'),
 	router = express.Router();
+var cors = require('cors');
 
 router
 	.route('/all')
@@ -48,99 +49,25 @@ router
 	});
 
 router
-	.route('/users/:id')
-	.put(function(req, res) {
-		ticketModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				var prop;
+	.route('/getTicketInformation')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
 
-				if (err) {
-					res.send(err);
-
-					return;
-				}
-
-				if (user === null) {
-					res.json({
-						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
-					});
-
-					return;
-				}
-
-				for (prop in req.body) {
-					if (prop !== '_id') {
-						user[prop] = req.body[prop];
+		var ticketInformation = [];
+		
+		for (let i = 0; i < postData.length; i++) {
+			ticketModel.findOne(
+				{
+					type: postData[i].type,
+				},
+				function(err, screeningTicket) {
+					ticketInformation.push(screeningTicket);
+					if (i == postData.length - 1) {
+						res.json(ticketInformation);
 					}
 				}
-
-				ticketModel.update(
-					{
-						_id: user._id
-					},
-					user,
-					{},
-					function(err, numReplaced) {
-						if (err) {
-							res.send(err);
-
-							return;
-						}
-
-						res.json({
-							type: 'success',
-							message: 'Replaced ' + numReplaced + ' user(s).'
-						});
-					}
-				);
-			}
-		);
+			);
+		}
 	})
-	.get(function(req, res) {
-		ticketModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-
-					return;
-				}
-
-				if (user === null) {
-					res.json({
-						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
-					});
-
-					return;
-				}
-
-				res.json(user);
-			}
-		);
-	})
-	.delete(function(req, res) {
-		ticketModel.remove(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-				}
-
-				res.json({
-					type: 'success',
-					message: 'Successfully deleted user with id "' + req.params.id + '".'
-				});
-			}
-		);
-	});
 
 module.exports = router;

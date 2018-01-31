@@ -1,2 +1,2 @@
-{"_id":"1","cinema_id":"1","name":"IMAX-ONE","vip":true,"bed_room":false,"imax":true,"three_dimensional":true,"four_dimensional":false,"row":10,"seat_number":30}
-{"_id":"2","cinema_id":"10","name":"IMAX-ODIN","vip":true,"bed_room":false,"imax":true,"three_dimensional":true,"four_dimensional":false,"row":15,"seat_number":30}
+{"_id":1,"cinemaId":"1","name":"IMAX-ONE","vip":true,"bedRoom":false,"imax":true,"threeDimensional":true,"fourDimensional":false,"row":10,"seatNumber":30}
+{"_id":2,"cinemaId":"10","name":"IMAX-ODIN","vip":true,"bedRoom":false,"imax":true,"threeDimensional":true,"fourDimensional":false,"row":15,"seatNumber":30}

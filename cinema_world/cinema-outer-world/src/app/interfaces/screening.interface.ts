@@ -3,14 +3,12 @@ import { Room } from './room.interface';
 import { Time } from '@angular/common';
 
 export interface Ticket {
-  ticket: {
-    type: string;
-    price: number;
-  }
+  type: string;
+  price: number;
 }
 
 export interface Screening {
-  id?: number;
+  _id?: number;
   twoDimensional?: boolean;
   threeDimensional?: boolean;
   fourDimensional?: boolean;

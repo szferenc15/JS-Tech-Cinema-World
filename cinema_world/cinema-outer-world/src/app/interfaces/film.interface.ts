@@ -8,6 +8,7 @@ export interface Trailer {
 }
 
 export interface Film {
+  _id?: number,
   title?: string;
   picture?: string;
   language?: string;

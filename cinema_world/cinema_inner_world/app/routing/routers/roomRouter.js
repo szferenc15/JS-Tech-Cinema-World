@@ -1,6 +1,7 @@
 var express = require('express'),
 	roomModel = require('../../model/roomModel'),
 	router = express.Router();
+var cors = require('cors');
 
 router
 	.route('/all')
@@ -48,55 +49,28 @@ router
 	});
 
 router
-	.route('/users/:id')
-	.put(function(req, res) {
+	.route('/roomOfScreening')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
 		roomModel.findOne(
 			{
-				_id: req.params.id
+				_id: postData._id
 			},
-			function(err, user) {
-				var prop;
-
+			function(err, room) {
 				if (err) {
 					res.send(err);
 
 					return;
 				}
-
-				if (user === null) {
+				if (room === null) {
 					res.json({
 						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
+						message: 'No room'
 					});
 
 					return;
 				}
-
-				for (prop in req.body) {
-					if (prop !== '_id') {
-						user[prop] = req.body[prop];
-					}
-				}
-
-				roomModel.update(
-					{
-						_id: user._id
-					},
-					user,
-					{},
-					function(err, numReplaced) {
-						if (err) {
-							res.send(err);
-
-							return;
-						}
-
-						res.json({
-							type: 'success',
-							message: 'Replaced ' + numReplaced + ' user(s).'
-						});
-					}
-				);
+				res.json(room);
 			}
 		);
 	})

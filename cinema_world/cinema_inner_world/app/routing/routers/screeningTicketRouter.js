@@ -1,10 +1,11 @@
 var express = require('express'),
 	screeningTicketModel = require('../../model/screeningTicketModel'),
 	router = express.Router();
+var cors = require('cors');
 
 router
 	.route('/all')
-	.get(function(req, res) {
+	.get(cors(), function(req, res) {
 		screeningTicketModel.find({}, function(err, users) {
 			if (err) {
 				res.send(err);
@@ -48,99 +49,33 @@ router
 	});
 
 router
-	.route('/users/:id')
-	.put(function(req, res) {
-		screeningTicketModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				var prop;
+	.route('/getTickets')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
 
+		screeningTicketModel.find(
+			{
+				screeningId: postData._id,
+			},
+			function(err, screeningTickets) {
 				if (err) {
 					res.send(err);
 
 					return;
 				}
 
-				if (user === null) {
+				if (screeningTickets === null) {
 					res.json({
 						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
+						message: 'No tickets'
 					});
 
 					return;
 				}
 
-				for (prop in req.body) {
-					if (prop !== '_id') {
-						user[prop] = req.body[prop];
-					}
-				}
-
-				screeningTicketModel.update(
-					{
-						_id: user._id
-					},
-					user,
-					{},
-					function(err, numReplaced) {
-						if (err) {
-							res.send(err);
-
-							return;
-						}
-
-						res.json({
-							type: 'success',
-							message: 'Replaced ' + numReplaced + ' user(s).'
-						});
-					}
-				);
+				res.json(screeningTickets);
 			}
 		);
 	})
-	.get(function(req, res) {
-		screeningTicketModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-
-					return;
-				}
-
-				if (user === null) {
-					res.json({
-						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
-					});
-
-					return;
-				}
-
-				res.json(user);
-			}
-		);
-	})
-	.delete(function(req, res) {
-		screeningTicketModel.remove(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-				}
-
-				res.json({
-					type: 'success',
-					message: 'Successfully deleted user with id "' + req.params.id + '".'
-				});
-			}
-		);
-	});
 
 module.exports = router;

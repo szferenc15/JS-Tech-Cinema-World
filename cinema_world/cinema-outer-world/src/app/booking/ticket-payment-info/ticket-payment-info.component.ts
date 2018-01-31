@@ -56,10 +56,10 @@ export class TicketPaymentInfoComponent implements OnInit, OnDestroy {
 
     for (let i = 0; i < ticketResults.length; i++) {
       let actualTicketCount = ticketResults[i].selected.value;
-      let actualTicketType =  this.availableTickets[i].ticket.type;
-      let actualTicketPrice =  this.availableTickets[i].ticket.price;
+      let actualTicketType =  this.availableTickets[i].type;
+      let actualTicketPrice =  this.availableTickets[i].price;
       for (let j = 0; j < actualTicketCount; j++) {
-        this.selectedTickets.push({ticket: {type: actualTicketType, price: actualTicketPrice}});
+        this.selectedTickets.push({type: actualTicketType, price: actualTicketPrice});
       }
     }
 

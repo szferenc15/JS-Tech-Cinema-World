@@ -4,7 +4,7 @@ export interface RoomDimension {
 }
 
 export interface Room {
-  id?: number;
+  _id?: number;
   name?: string;
   vip?: boolean;
   bedRoom?: boolean;

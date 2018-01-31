@@ -1,6 +1,8 @@
 var express = require('express'),
 	bookingTicketModel = require('../../model/bookingTicketModel'),
+	userBookingModel = require('../../model/userBookingModel'),
 	router = express.Router();
+var cors = require('cors');
 
 router
 	.route('/all')
@@ -48,99 +50,50 @@ router
 	});
 
 router
-	.route('/users/:id')
-	.put(function(req, res) {
-		bookingTicketModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				var prop;
+	.route('/bookingsOfScreening')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
 
+		bookingTicketModel.find(
+			{
+				screeningId: postData._id
+			},
+			function(err, bookingTickets) {
 				if (err) {
 					res.send(err);
 
 					return;
 				}
 
-				if (user === null) {
+				if (bookingTickets === null) {
 					res.json({
 						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
+						message: 'No bookings'
 					});
 
 					return;
 				}
 
-				for (prop in req.body) {
-					if (prop !== '_id') {
-						user[prop] = req.body[prop];
-					}
-				}
-
-				bookingTicketModel.update(
-					{
-						_id: user._id
-					},
-					user,
-					{},
-					function(err, numReplaced) {
-						if (err) {
-							res.send(err);
-
-							return;
-						}
-
-						res.json({
-							type: 'success',
-							message: 'Replaced ' + numReplaced + ' user(s).'
-						});
-					}
-				);
+				res.json(bookingTickets);
 			}
 		);
 	})
-	.get(function(req, res) {
-		bookingTicketModel.findOne(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
 
-					return;
-				}
-
-				if (user === null) {
-					res.json({
-						type: 'error',
-						message: 'Did not find a user with "id" of "' + req.params.id + '".'
-					});
-
-					return;
-				}
-
-				res.json(user);
+router
+	.route('/new_booking')
+	.post(cors(), function(req, res) {
+		var postData = req.body;
+		for (let i = 0; i < postData.bookings.length; i++) {
+			let newBooking = {
+				screeningId: postData.screeningId,
+				username: postData.username,
+				payment: postData.paymentMethod,
+				type: postData.bookings[i].type,
+				row: postData.bookings[i].row,
+				chair: postData.bookings[i].chair
 			}
-		);
+			bookingTicketModel.insert(newBooking);
+		}
 	})
-	.delete(function(req, res) {
-		bookingTicketModel.remove(
-			{
-				_id: req.params.id
-			},
-			function(err, user) {
-				if (err) {
-					res.send(err);
-				}
-
-				res.json({
-					type: 'success',
-					message: 'Successfully deleted user with id "' + req.params.id + '".'
-				});
-			}
-		);
-	});
 
 module.exports = router;

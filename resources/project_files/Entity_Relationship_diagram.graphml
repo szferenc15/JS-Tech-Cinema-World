@@ -178,7 +178,7 @@ FK_FI_CAT_CAT=PK_CAT_CAT<y:LabelModel>
     <node id="n6">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="139.46515397082658" width="221.33508914100486" x="1018.2719749883404" y="211.02127228525126"/>
+          <y:Geometry height="139.46515397082658" width="221.33508914100486" x="807.6529240950837" y="149.96779634942237"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="37.33984375" x="91.99762269550251" y="4.0">USER</y:NodeLabel>
@@ -318,10 +318,8 @@ FK_SC_TIC=PK_TIC_TYPE<y:LabelModel>
     <edge id="e3" source="n0" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-139.30876644850872" sy="40.92007644372032" tx="49.637032085561486" ty="-78.15051699182703">
-            <y:Point x="463.442513368984" y="232.62834224598936"/>
-            <y:Point x="463.442513368984" y="366.13636363636357"/>
-            <y:Point x="361.2620320855615" y="366.13636363636357"/>
+          <y:Path sx="-139.30876644850872" sy="40.92007644372032" tx="12.353609625668469" ty="33.93461669801263">
+            <y:Point x="323.97860962566847" y="232.62834224598936"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
@@ -362,9 +360,7 @@ FK_SC_TIC=PK_TIC_TYPE<y:LabelModel>
     <edge id="e7" source="n7" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.9283615483175254" sy="-68.30548579753099" tx="0.0" ty="0.0">
-            <y:Point x="1128.939519558843" y="410.219362745098"/>
-          </y:Path>
+          <y:Path sx="0.9283615483175254" sy="-68.30548579753099" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one" target="crows_foot_one"/>
           <y:BendStyle smoothed="false"/>
@@ -385,8 +381,7 @@ FK_SC_TIC=PK_TIC_TYPE<y:LabelModel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="1316.3673136837124" y="-50.88794928019831"/>
-            <y:Point x="1316.3673136837124" y="494.4163904321121"/>
+            <y:Point x="1182.890975950274" y="-50.88794928019831"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="crows_foot_one" target="crows_foot_one"/>

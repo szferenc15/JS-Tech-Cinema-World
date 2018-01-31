@@ -38,7 +38,7 @@ Bármely személy, akinek a moziba járás nem csak a filmnézésről szól, han
 ## Használt technológiák, fejlesztői környezetek, programozási nyelvek:
 + **[Git]** - Verziókezelő rendszer
 + **[Microsoft Visual Studio Code]** - Forráskód szerkesztő
-+ **[Node JS]** - Szerver oldali JavaScript (szerveroldal)
++ **[Node JS]** - Szerveroldali JavaScript (szerveroldal)
 + **[Express]** - Node JS webalkalmazási keretrendszer (szerveroldal)
 + **[NeDB]** - JavaScript adatbáziskezelő (szerveroldal)
 + **[Angular 2/4]** - Programozási nyelv (HTML, CSS, SCSS, Typescript) (kliensoldal)
